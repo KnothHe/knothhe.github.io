@@ -137,13 +137,6 @@
 
   
   <url>
-    <loc>http://blog.guanglai.me/tags/Interview/</loc>
-    <lastmod>2024-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.guanglai.me/tags/Docker/</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -152,6 +145,13 @@
   
   <url>
     <loc>http://blog.guanglai.me/tags/MySQL/</loc>
+    <lastmod>2024-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.guanglai.me/tags/Interview/</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -221,13 +221,6 @@
   </url>
   
   <url>
-    <loc>http://blog.guanglai.me/tags/Beamer/</loc>
-    <lastmod>2024-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.guanglai.me/tags/Blog/</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -236,6 +229,13 @@
   
   <url>
     <loc>http://blog.guanglai.me/tags/NexT-Theme/</loc>
+    <lastmod>2024-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.guanglai.me/tags/Beamer/</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -272,14 +272,14 @@
 
   
   <url>
-    <loc>http://blog.guanglai.me/categories/Programming/</loc>
+    <loc>http://blog.guanglai.me/categories/Tools/</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.guanglai.me/categories/Tools/</loc>
+    <loc>http://blog.guanglai.me/categories/Programming/</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

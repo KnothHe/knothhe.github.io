@@ -13,9 +13,9 @@ http://blog.guanglai.me/markdown-syntax-support-test/
 http://blog.guanglai.me/use-latex-beamer/
 http://blog.guanglai.me/interview-first-time/
 http://blog.guanglai.me/
-http://blog.guanglai.me/tags/Interview/
 http://blog.guanglai.me/tags/Docker/
 http://blog.guanglai.me/tags/MySQL/
+http://blog.guanglai.me/tags/Interview/
 http://blog.guanglai.me/tags/Hexo/
 http://blog.guanglai.me/tags/IEEE-754/
 http://blog.guanglai.me/tags/Floating-Point/
@@ -25,13 +25,13 @@ http://blog.guanglai.me/tags/LeetCode/
 http://blog.guanglai.me/tags/Online-Judge/
 http://blog.guanglai.me/tags/Algorithm/
 http://blog.guanglai.me/tags/Linked-List/
-http://blog.guanglai.me/tags/Beamer/
 http://blog.guanglai.me/tags/Blog/
 http://blog.guanglai.me/tags/NexT-Theme/
+http://blog.guanglai.me/tags/Beamer/
 http://blog.guanglai.me/tags/VS-Code/
 http://blog.guanglai.me/tags/Linux/
 http://blog.guanglai.me/tags/C-C/
 http://blog.guanglai.me/tags/Debugger/
-http://blog.guanglai.me/categories/Programming/
 http://blog.guanglai.me/categories/Tools/
+http://blog.guanglai.me/categories/Programming/
 http://blog.guanglai.me/categories/Computer/
