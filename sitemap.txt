@@ -1,3 +1,4 @@
+http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/
 http://blog.guanglai.me/tags/index.html
 http://blog.guanglai.me/categories/index.html
 http://blog.guanglai.me/vscode-linux-debugger-launch/

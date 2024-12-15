@@ -23,32 +23,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.guanglai.me","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="一直以来，我在 Linux 下的 VS Code 的启动调试器都存在无法调试需要获取用户输入的程序，昨天总算是把这个问题解决了。 tldr: 在 Linux 下不要用 lldb，用 gdb，具体原因不清楚，但是我被坑了。">
+    <meta name="description" content="这里是广来这周在做什么的第三期，这周和朋友去苏州随心旅游去了，所有没有什么可写的，不过还是尽可能的记录一下。 这周前四天跟着 MDN 的 HTML 教程，学习了 HTML Table 和 Form 表单 HTML 部分的内容，目前的主要精力在 CSS 上。 毕竟也打算开始换份工作了，所以系统刷算法题，学习工程项目，系统设计，面试题也都要开始准备起来了。想要做的事情很多，不能继续荒废时间了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 下 VS Code 的 C&#x2F;C++ 调试器使用">
-<meta property="og:url" content="http://blog.guanglai.me/vscode-linux-debugger-launch/index.html">
+<meta property="og:title" content="广来这周在做什么 003">
+<meta property="og:url" content="http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/index.html">
 <meta property="og:site_name" content="~来都来了~">
-<meta property="og:description" content="一直以来，我在 Linux 下的 VS Code 的启动调试器都存在无法调试需要获取用户输入的程序，昨天总算是把这个问题解决了。 tldr: 在 Linux 下不要用 lldb，用 gdb，具体原因不清楚，但是我被坑了。">
+<meta property="og:description" content="这里是广来这周在做什么的第三期，这周和朋友去苏州随心旅游去了，所有没有什么可写的，不过还是尽可能的记录一下。 这周前四天跟着 MDN 的 HTML 教程，学习了 HTML Table 和 Form 表单 HTML 部分的内容，目前的主要精力在 CSS 上。 毕竟也打算开始换份工作了，所以系统刷算法题，学习工程项目，系统设计，面试题也都要开始准备起来了。想要做的事情很多，不能继续荒废时间了。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://blog.guanglai.me/vscode-linux-debugger-launch/vscode-cpptools-pinned-issue.png">
-<meta property="article:published_time" content="2019-09-05T00:19:05.000Z">
-<meta property="article:modified_time" content="2024-12-08T13:47:45.184Z">
+<meta property="og:image" content="http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/a-maple-in-panmen.jpg">
+<meta property="article:published_time" content="2024-12-15T16:22:30.000Z">
+<meta property="article:modified_time" content="2024-12-15T16:22:30.000Z">
 <meta property="article:author" content="GuangLai He">
-<meta property="article:tag" content="VS Code">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="C&#x2F;C++">
-<meta property="article:tag" content="Debugger">
+<meta property="article:tag" content="Life">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.guanglai.me/vscode-linux-debugger-launch/vscode-cpptools-pinned-issue.png">
+<meta name="twitter:image" content="http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/a-maple-in-panmen.jpg">
 
 
-<link rel="canonical" href="http://blog.guanglai.me/vscode-linux-debugger-launch/">
+<link rel="canonical" href="http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://blog.guanglai.me/vscode-linux-debugger-launch/","path":"vscode-linux-debugger-launch/","title":"Linux 下 VS Code 的 C/C++ 调试器使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/","path":"what-is-guanglai-doing-this-week-003/","title":"广来这周在做什么 003"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Linux 下 VS Code 的 C/C++ 调试器使用 | ~来都来了~</title>
+<title>广来这周在做什么 003 | ~来都来了~</title>
   
 
 
@@ -149,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#launch-json-%E5%92%8C-task-json"><span class="nav-number">1.</span> <span class="nav-text">launch.json 和 task.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#externalConsole-%E9%80%89%E9%A1%B9-%E9%BB%98%E8%AE%A4%E5%A4%96%E9%83%A8%E7%BB%88%E7%AB%AF%E7%9A%84%E5%9D%91"><span class="nav-number">2.</span> <span class="nav-text">externalConsole 选项&#x2F;默认外部终端的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gdb-vs-lldb"><span class="nav-number">3.</span> <span class="nav-text">gdb vs lldb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%8F%E5%B7%9E"><span class="nav-number">1.</span> <span class="nav-text">苏州</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%8F%E5%B7%9E%E7%9A%84%E5%B0%8F%E5%90%83"><span class="nav-number">1.1.</span> <span class="nav-text">苏州的小吃</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9B%E4%BA%86%E5%93%AA%E4%BA%9B%E5%9C%B0%E6%96%B9"><span class="nav-number">1.2.</span> <span class="nav-text">逛了哪些地方</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF"><span class="nav-number">2.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text">博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.1.</span> <span class="nav-text">一些有意思的博客</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.guanglai.me/vscode-linux-debugger-launch/">
+    <link itemprop="mainEntityOfPage" href="http://blog.guanglai.me/what-is-guanglai-doing-this-week-003/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -221,12 +218,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Linux 下 VS Code 的 C/C++ 调试器使用 | ~来都来了~">
+      <meta itemprop="name" content="广来这周在做什么 003 | ~来都来了~">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Linux 下 VS Code 的 C/C++ 调试器使用<a href="https://github.com/knothhe/blog/tree/master/source/_posts/vscode-linux-debugger-launch.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          广来这周在做什么 003<a href="https://github.com/knothhe/blog/tree/master/source/_posts/what-is-guanglai-doing-this-week-003.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -237,14 +234,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2019-09-05 08:19:05" itemprop="dateCreated datePublished" datetime="2019-09-05T08:19:05+08:00">2019-09-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-08 21:47:45" itemprop="dateModified" datetime="2024-12-08T21:47:45+08:00">2024-12-08</time>
+      <time title="创建时间：2024-12-16 00:22:30" itemprop="dateCreated datePublished" datetime="2024-12-16T00:22:30+08:00">2024-12-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,7 +242,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+          <a href="/categories/Weekly/" itemprop="url" rel="index"><span itemprop="name">Weekly</span></a>
         </span>
     </span>
 
@@ -265,16 +255,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>一直以来，我在 Linux 下的 VS Code 的启动调试器都存在无法调试需要获取用户输入的程序，昨天总算是把这个问题解决了。</p>
-<p>tldr: 在 Linux 下不要用 lldb，用 gdb，具体原因不清楚，但是我被坑了。</p>
+    <div class="post-body" itemprop="articleBody"><p>这里是广来这周在做什么的第三期，这周和朋友去苏州随心旅游去了，所有没有什么可写的，不过还是尽可能的记录一下。</p>
+<p>这周前四天跟着 MDN 的 HTML 教程，学习了 HTML Table 和 Form 表单 HTML 部分的内容，目前的主要精力在 CSS 上。</p>
+<p>毕竟也打算开始换份工作了，所以系统刷算法题，学习工程项目，系统设计，面试题也都要开始准备起来了。想要做的事情很多，不能继续荒废时间了。</p>
 <span id="more"></span>
 
-<h2 id="launch-json-和-task-json"><a href="#launch-json-和-task-json" class="headerlink" title="launch.json 和 task.json"></a>launch.json 和 task.json</h2><p>VS Code 下启动调试器需要依赖文件夹根目录下的 .vsocde&#x2F;launch.json 文件，该目录及其子目录的调试器的行为都可以通过在该文件中配置选项来指定。最简单的创建 launch.json 文件的方法是在需要调试的源程序标签页中点击左边 Activity Bar 上的调试器的按钮，当没有 launch.json 文件时，VS Code 会提示根据模板创建 launch.json 文件。然后回到源程序标签下，启动刚刚创建的 launch.json，由于没有生成可调试的可执行文件，需要生成 .vscode&#x2F;task.json 预先编译源文件生成可调试的可执行文件。正常情况下，接下来应该就可以进行调试。但是在 Manjaro 下使用是我遇到了以下问题。</p>
-<h2 id="externalConsole-选项-默认外部终端的坑"><a href="#externalConsole-选项-默认外部终端的坑" class="headerlink" title="externalConsole 选项&#x2F;默认外部终端的坑"></a>externalConsole 选项&#x2F;默认外部终端的坑</h2><p>根据 vscode-cpptools 的这个 <a href="https://github.com/microsoft/vscode-cpptools/issues/2998">issue</a> 中线索，当设置 externalConsole 为 true 时，在 Linux 下，调试器会完全无法启动。设置为 false，则可以启动，但是无法获用户输入（后来证实是我遇到的另一个坑）。</p>
-<p>仔细阅读该 issue 可以发现，关键在于 VS Code 的调试器在启动时，如果该选项设置为 true，则 VS Code 会根据 terminal.external.linuxExec 推断在 Linux 下应该启动的默认的 Terminal，并且该选项的默认值为 xterm。但是我的系统上并没有安装 xterm，所以在启动调试器后一直卡顿在这一步。于是安装 xterm。然后调试器正常启动。</p>
-<h2 id="gdb-vs-lldb"><a href="#gdb-vs-lldb" class="headerlink" title="gdb vs lldb"></a>gdb vs lldb</h2><p>开始时我使用的调试器是 lldb，一切都很正常，唯有在读取用户输入时，无论是内部终端还是外部终端，都无法成功。于是切换到 gdb，成功。从这儿就能感觉到 llvm 在 Linux 下的支持还是不如 gcc，虽然我很喜欢或者说更偏向 clang&#x2F;llvm。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>有意思的是，我刚刚引用的那个 issue 是唯一被标记的 issue，可见被坑的人应该不在少数 ;p</p>
-<img data-src="/vscode-linux-debugger-launch/vscode-cpptools-pinned-issue.png" class="" title="唯一标记的 issue">
+<h2 id="苏州"><a href="#苏州" class="headerlink" title="苏州"></a>苏州</h2><p>周五到周日三天时间和朋友去了苏州，实际上的是时间是周五的十一点左右从上海出发，周日的两点左右会到上海的出租屋。本着是躺平的想法，我们两个人没有做太多的规划。大致的计划是在苏州站回合，住宿在苏州博物馆附近，周围有很多可以去的地方。虽然是住宿在苏博附近，最终却并没有去苏博。没去苏博的原因倒是令人捧腹。我和朋友周四晚上打算预约苏博，开始是朋友截图给我他预订了苏博一点钟的门票，我也就同他一样，预约一点门票，计划是周五当天下高铁之后，先去吃饭，然后就去苏博逛逛。高铁站回合之后，却发现我朋友压根没有预订成功苏博管的门票。他只是填写的自己的个人信息，并没有点击最后一步的提交按钮。也就是，他以为他预订苏博的门票，然而实际上并没有。毕竟是本着躺平，随心旅游，于是我们也就放弃了这个计划，先打车去了酒店，放下东西，去周围逛逛吃吃。</p>
+<h3 id="苏州的小吃"><a href="#苏州的小吃" class="headerlink" title="苏州的小吃"></a>苏州的小吃</h3><p>打车到住宿的地方，一眼就能看到『松鼠桂鱼』一类的苏州菜馆，在大众点评上搜索一下，也能看到非常非常非常多的写着松鼠桂鱼的苏州菜馆。苏州的松鼠桂鱼是真的多啊。我和朋友本身也是江苏籍贯，从小在江苏长大的，只是所处市县不是苏州，整体饮食风格是差不多的。躺平旅游的这几天，吃的最多的就是『汤包』，『生煎』，『汤面』之类的食物。当然晚上的娱乐，也会买点薯条，可乐，享受快乐人生。这一趟倒是没有吃到太多的苏州特色小吃。</p>
+<p>周六的晚上，秉着<del>来都来了</del>，还是去了吃了酒店附近的松鼠桂鱼苏州菜馆。一百多的价格，两个人吃得很满足。</p>
+<p>周日中午快离开的时候，去小吃点买了芋泥肉松团子，非常好吃，很推荐。</p>
+<h3 id="逛了哪些地方"><a href="#逛了哪些地方" class="headerlink" title="逛了哪些地方"></a>逛了哪些地方</h3><p>没去成苏博，转头下午就去了狮子林方向的拙政园，来苏州当然是逛园林了。一个半小时到两个小时足够把拙政园大概逛一圈了。不过我们两个人实在也是没有太多文化底蕴，对园林背后的文化背景是一窍不通的。不同园林之间的区别是看不出来的，园林门匾上的字也是一半认识一半不认识的。没文化的我们只能看园林是园林。园林一类的经典，这趟就只逛了拙政园。</p>
+<p>东方之门、盘门、东园和逛公园一样，散步逛了一圈，这趟是有够躺平的。活动范围就在酒店附近了。</p>
+<style>.vxgeuekuwngf{zoom:10%}</style><img data-src="/what-is-guanglai-doing-this-week-003/a-maple-in-panmen.jpg" class="vxgeuekuwngf" alt="一棵在盘门景区的枫树">
+
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p>前端还是前端三件套，努力学习 CSS 中。</p>
+<h2 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h2><p>之前有看过一个 <a href="https://mtfront.notion.site/mtfront-shopping-reviews-e568ee6ebaa44b5da146cbe4ac4663eb">剁手安利数据库(mtfront-shopping-reviews)</a>，不过一直没看看这个页面的关于部分，周六的晚上，回到酒店之后，刷着电脑，逛了一逛。这位博主的博客是在是很有意思，有空还会在继续看看。</p>
+<h3 id="一些有意思的博客"><a href="#一些有意思的博客" class="headerlink" title="一些有意思的博客"></a>一些有意思的博客</h3><ul>
+<li><a href="https://blog.douchi.space/docs/about/#gsc.tab=0">About | 椒盐豆豉</a></li>
+<li><a href="https://yayu.net/about">关于我 · 雅余 · 茶余饭后，闲情雅致</a></li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这周是躺平的一周，积累了不少想做的事情，接下来准备好忙碌了。</p>
 
     </div>
 
@@ -301,10 +301,7 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/VS-Code/" rel="tag"># VS Code</a>
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-              <a href="/tags/C-C/" rel="tag"># C/C++</a>
-              <a href="/tags/Debugger/" rel="tag"># Debugger</a>
+              <a href="/tags/Life/" rel="tag"># Life</a>
           </div>
 
         
@@ -318,14 +315,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/ieee-floating-point-representation/" rel="prev" title="IEEE 浮点数表示">
-                  <i class="fa fa-angle-left"></i> IEEE 浮点数表示
+                <a href="/what-is-guanglai-doing-this-week-002/" rel="prev" title="广来这周在做什么 002">
+                  <i class="fa fa-angle-left"></i> 广来这周在做什么 002
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/guangzhou-baitian-written-test/" rel="next" title="广州百田 2019 笔试题">
-                  广州百田 2019 笔试题 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
