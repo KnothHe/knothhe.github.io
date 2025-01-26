@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari_pinned_tab.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="google-site-verification" content="0geTufxIL_urRfGYXdanCSRXtO85KNnZTYDcIJ4M63Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.guanglai.me","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近准备重新捡起很久没写的博客，在浏览器里打开博客页面，发现博客页面的样式文件已经丢失，就像年久失修的房屋一样。想要重新开始写博客，首要的是升级下博客使用的静态页面模板。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="升级 Hexo 和对应的主题 NexT Theme 的版本">
+<meta property="og:url" content="https://blog.guanglai.me/update-hexo-7-x-and-theme-next-8-x/index.html">
+<meta property="og:site_name" content="~来都来了~">
+<meta property="og:description" content="最近准备重新捡起很久没写的博客，在浏览器里打开博客页面，发现博客页面的样式文件已经丢失，就像年久失修的房屋一样。想要重新开始写博客，首要的是升级下博客使用的静态页面模板。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-21T00:00:24.000Z">
+<meta property="article:modified_time" content="2024-11-23T02:27:31.000Z">
+<meta property="article:author" content="GuangLai He">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="NexT Theme">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.guanglai.me/update-hexo-7-x-and-theme-next-8-x/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.guanglai.me/update-hexo-7-x-and-theme-next-8-x/","path":"update-hexo-7-x-and-theme-next-8-x/","title":"升级 Hexo 和对应的主题 NexT Theme 的版本"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>升级 Hexo 和对应的主题 NexT Theme 的版本 | ~来都来了~</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="~来都来了~" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">~来都来了~</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GuangLai 的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-Hexo-%E7%89%88%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">升级 Hexo 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-Next-Theme-%E7%89%88%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">升级 Next Theme 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E4%BF%AE%E5%A4%8D"><span class="nav-number">3.</span> <span class="nav-text">博客本地图片链接修复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">自定义域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%B7%E6%AD%8C%E7%BD%91%E7%AB%99%E9%AA%8C%E8%AF%81"><span class="nav-number">5.</span> <span class="nav-text">谷歌网站验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E7%BC%A9%E6%94%BE"><span class="nav-number">6.</span> <span class="nav-text">图片缩放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E9%85%8D%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">特殊配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GuangLai He</p>
+  <div class="site-description" itemprop="description">GuangLai 的博客，记录一些生活、技术上的想法和实践</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/knothhe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;knothhe" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:guanglaihe@gmail.com" title="E-Mail → mailto:guanglaihe@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.guanglai.me/update-hexo-7-x-and-theme-next-8-x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GuangLai He">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="~来都来了~">
+      <meta itemprop="description" content="GuangLai 的博客，记录一些生活、技术上的想法和实践">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="升级 Hexo 和对应的主题 NexT Theme 的版本 | ~来都来了~">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          升级 Hexo 和对应的主题 NexT Theme 的版本<a href="https://github.com/knothhe/blog/tree/master/source/_posts/update-hexo-7-x-and-theme-next-8-x.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-11-21 08:00:24" itemprop="dateCreated datePublished" datetime="2024-11-21T08:00:24+08:00">2024-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-11-23 10:27:31" itemprop="dateModified" datetime="2024-11-23T10:27:31+08:00">2024-11-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>最近准备重新捡起很久没写的博客，在浏览器里打开博客页面，发现博客页面的样式文件已经丢失，就像年久失修的房屋一样。想要重新开始写博客，首要的是升级下博客使用的静态页面模板。</p>
+<span id="more"></span>
+
+<p>以下命令行操作，如果没有特殊描述，都是在博客文件夹根目录下执行。</p>
+<h2 id="升级-Hexo-版本"><a href="#升级-Hexo-版本" class="headerlink" title="升级 Hexo 版本"></a>升级 Hexo 版本</h2><p>思路：主要先升级 <code>node.js</code> 和 <code>hexo-cli</code> 的版本，其次借助 <code>npm</code> 相关工具包的能力，更新 <code>hexo</code> 下依赖的部分 <code>npm</code> 包的版本，主要是插件部分。</p>
+<ol>
+<li>升级 <code>node.js</code> 版本。v12 -&gt; v14</li>
+</ol>
+<p>由于我使用的是 <code>nvm</code> 管理 <code>node.js</code> 的相关版本，直接使用 <code>nvm use</code> 即可。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install v14</span><br><span class="line">nvm use v14</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>升级 <code>hexo-cli</code> 版本。</li>
+</ol>
+<p>或者卸载重新安装 <code>hexo-cli</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>更新 <code>npm</code> 插件</li>
+</ol>
+<p>安装工具包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br><span class="line">npm install -g npm-upgrade</span><br></pre></td></tr></table></figure>
+
+<p>升级 <code>npm</code> 依赖，按照提示升级对应插件的版本即可</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm-check</span><br><span class="line">npm-upgrade</span><br><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="升级-Next-Theme-版本"><a href="#升级-Next-Theme-版本" class="headerlink" title="升级 Next Theme 版本"></a>升级 Next Theme 版本</h2><p>老版的 <code>hexo</code> 安装主题是直接把主题拉取放到 <code>theme</code> 目录下，自从 <code>5.0</code> 版本之后，支持通过 <code>npm</code> 包的方式安装主题。所以我删除了原本的 <code>theme</code> 主题，通过 <code>npm</code> 安装了最新版本的 NexT Theme。</p>
+<p>NexT Theme 文档：</p>
+<blockquote>
+<p>If you’re using Hexo 5.0 or later, the simplest way to install is through npm:</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+
+<p>新版的主题配置文件，博客根目录下 <code>_config.next.yml</code>。<br>至此，基本上的版本升级就完成了。不过由于版本跨度的原因，我没有保留原有的 NexT 的配置文件，而是直接在配置现有的主题配置文件。</p>
+<h2 id="博客本地图片链接修复"><a href="#博客本地图片链接修复" class="headerlink" title="博客本地图片链接修复"></a>博客本地图片链接修复</h2><p>老版本依赖 <code>hexo-asset-image</code> 提供引用本地相对路径图片的能力，以使用原生 Markdown 渲染，自从 <code>Hexo 5</code> 版本后，该插件就失效了，所以使用 <code>hexo-asset-img</code> 插件替换。</p>
+<p>卸载 <code>hexo-asset-image</code> 插件，安装 <code>hexo-asset-img</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-asset-image --save</span><br><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<p>不过实际尝试之后，发现 <code>about</code> 页面的图片仍然无法展示，暂时先搁置该问题了。</p>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ol>
+<li><p>域名服务商处配置 DNS <code>CANME</code> 记录。</p>
+</li>
+<li><p>添加 <code>CNAME</code> 文件<br>Github Pages 提供了自动域名的能力，不过由于 Hexo 每次部署都是重新推送文件到 Github 仓库，所以在设置中配置自定义域名会被覆盖，解决办法是在 <code>source</code> 文件夹下添加文件名为 <code>CNAME</code> 的文件即可。</p>
+</li>
+</ol>
+<p>Hexo 的文档中提到：</p>
+<blockquote>
+<p>若你使用了一个带有 CNAME 的自定义域名，你需要在 source&#x2F; 文件夹中新增 CNAME 文件。</p>
+</blockquote>
+<p>文件内容示例，以我的域名为例：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blog.guanglai.me</span><br></pre></td></tr></table></figure>
+
+<h2 id="谷歌网站验证"><a href="#谷歌网站验证" class="headerlink" title="谷歌网站验证"></a>谷歌网站验证</h2><p>在启用 Google Search Consloe 提交网站收录时，需要验证网站所有权，Google 给的其中之一的方式是在网站首页添加 HTML 标记。</p>
+<style>.tpkkfqkwllco{zoom:25%}</style>
+
+<p>在 NexT 的配置文件中 _config.next.yml 配置如下内容，配置对应 token 即可。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">google_site_verification:</span> <span class="string">your_token</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./picture-in-hexo/test.jpg&quot;</span> <span class="attr">title</span>=<span class="string">&quot;图片标题&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;没有加载时显示的内容&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:25%&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;img-alt is-center&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span>图片标题2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="特殊配置"><a href="#特殊配置" class="headerlink" title="特殊配置"></a>特殊配置</h2><ul>
+<li>sitemap 开启站点地图，方便搜索引擎 SEO</li>
+<li>local search 提供简单的本地搜索功能</li>
+<li>utterances 替换 gitalk，作为博客评论插件</li>
+<li>mathjax LaTeX 语法的数学公式支持</li>
+<li>post edit 可以直接在对应的 Github 仓库源文件修改，搭配 Github Action 可以在修改后自动发布</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://leimingshan.com/posts/d9017f30/">Hexo升级指南 | Mingshan Lei’s Blog</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next">NexT theme</a></li>
+<li><a href="https://github.com/yiyungent/hexo-asset-img">yiyungent&#x2F;hexo-asset-img: 🍰 Hexo local image plugin. | Hexo 本地图片插件: 转换 图片相对路径 为 asset_img</a></li>
+<li><a href="https://utteranc.es/">utterances</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/github-pages">在 GitHub Pages 上部署 Hexo | Hexo</a></li>
+<li><a href="https://www.cnblogs.com/ywang-wnlo/p/Hexo-SEO.html">【Hexo】配置主流搜索引擎收录流程记录 - ywang_wnlo - 博客园</a></li>
+<li><a href="http://home.ustc.edu.cn/~sdyzzy/posts/36e27ee1.html">在 hexo 中使用图片的几种方法 | SDYZZY’s Universe</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Blog/" rel="tag"># Blog</a>
+              <a href="/tags/NexT-Theme/" rel="tag"># NexT Theme</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_x"></a>
+      <a class="a2a_button_wechat"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcode-147-Insertion-Sort-List/" rel="prev" title="LeetCode 147 链表的插入排序">
+                  <i class="fa fa-angle-left"></i> LeetCode 147 链表的插入排序
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/what-is-guanglai-doing-this-week-001/" rel="next" title="广来这周在做什么 001">
+                  广来这周在做什么 001 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2019 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">GuangLai He</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":"all","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"KnothHe/knothhe.github.io","issue_term":"pathname","theme":"photon-dark"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

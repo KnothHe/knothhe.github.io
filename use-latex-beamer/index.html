@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari_pinned_tab.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="google-site-verification" content="0geTufxIL_urRfGYXdanCSRXtO85KNnZTYDcIJ4M63Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.guanglai.me","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="今天用了 Beamer 做一个 Presentation，花了一点时间在查找各种细节。 Presentation 已经基本完成。于是决定把折腾得到的结果记录一下。 以下均是一个 LaTeX 门外汉的个人见解，也只是知其然而不知其所以然罢了。 最终的 Presentation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX Beamer 使用">
+<meta property="og:url" content="https://blog.guanglai.me/use-latex-beamer/index.html">
+<meta property="og:site_name" content="~来都来了~">
+<meta property="og:description" content="今天用了 Beamer 做一个 Presentation，花了一点时间在查找各种细节。 Presentation 已经基本完成。于是决定把折腾得到的结果记录一下。 以下均是一个 LaTeX 门外汉的个人见解，也只是知其然而不知其所以然罢了。 最终的 Presentation">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-13T12:25:25.000Z">
+<meta property="article:modified_time" content="2019-05-13T12:25:25.000Z">
+<meta property="article:author" content="GuangLai He">
+<meta property="article:tag" content="LaTeX">
+<meta property="article:tag" content="Beamer">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.guanglai.me/use-latex-beamer/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.guanglai.me/use-latex-beamer/","path":"use-latex-beamer/","title":"LaTeX Beamer 使用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LaTeX Beamer 使用 | ~来都来了~</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="~来都来了~" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">~来都来了~</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GuangLai 的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">元信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E9%A1%B5"><span class="nav-number">2.</span> <span class="nav-text">标题页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-ToC"><span class="nav-number">3.</span> <span class="nav-text">生成 ToC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Frame-%E6%A0%87%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">Frame 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">中文显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Beamer-%E4%B8%BB%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">Beamer 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%92%E5%88%86%E7%AB%A0%E8%8A%82"><span class="nav-number">7.</span> <span class="nav-text">划分章节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%8E%92%E7%89%88"><span class="nav-number">8.</span> <span class="nav-text">代码排版</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GuangLai He</p>
+  <div class="site-description" itemprop="description">GuangLai 的博客，记录一些生活、技术上的想法和实践</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/knothhe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;knothhe" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:guanglaihe@gmail.com" title="E-Mail → mailto:guanglaihe@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.guanglai.me/use-latex-beamer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GuangLai He">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="~来都来了~">
+      <meta itemprop="description" content="GuangLai 的博客，记录一些生活、技术上的想法和实践">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LaTeX Beamer 使用 | ~来都来了~">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX Beamer 使用<a href="https://github.com/knothhe/blog/tree/master/source/_posts/use-latex-beamer.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-04-13 20:25:25" itemprop="dateCreated datePublished" datetime="2019-04-13T20:25:25+08:00">2019-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-05-13 20:25:25" itemprop="dateModified" datetime="2019-05-13T20:25:25+08:00">2019-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>今天用了 Beamer 做一个 Presentation，花了一点时间在查找各种细节。 Presentation 已经基本完成。于是决定把折腾得到的结果记录一下。</p>
+<p>以下均是一个 <code>LaTeX</code> 门外汉的个人见解，也只是知其然而不知其所以然罢了。</p>
+<p>最终的 <a href="https://github.com/KnothHe/Markup-Files/blob/master/beamer/c51-beamer.tex">Presentation</a></p>
+<span id="more"></span>
+
+<h2 id="元信息"><a href="#元信息" class="headerlink" title="元信息"></a>元信息</h2><p>可以添加一些作者，日期之类的信息。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\title</span>&#123;..&#125;</span><br><span class="line"><span class="keyword">\author</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">\data</span>&#123;...&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="标题页"><a href="#标题页" class="headerlink" title="标题页"></a>标题页</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\titlepage</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="生成-ToC"><a href="#生成-ToC" class="headerlink" title="生成 ToC"></a>生成 ToC</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;Table of Contents&#125;</span><br><span class="line">    <span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Frame-标题"><a href="#Frame-标题" class="headerlink" title="Frame 标题"></a>Frame 标题</h2><p>在 <code>frame</code> 后加上 <code>&#123;title&#125;</code> 就行了。建议每个 <code>frame</code> 都加上一个标题。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;&#123;Title of This Frame&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="中文显示"><a href="#中文显示" class="headerlink" title="中文显示"></a>中文显示</h2><p>这个问题在我刚开始使用 <code>LaTeX</code> 是还是挺犯难的，用的时间较长了，加上多年来 <code>LaTeX</code> 的发展， LaTeX 对非西文字体的支持已经发展的相对友好，解决方法已经变得相当的简单。</p>
+<p>简单的解决方法就是使用 xeCJK，并配置中文字体。参考 <a href="https://liam.page/2014/11/02/latex-mactex-chinese-support/">为 MacTeX 配置中文支持</a></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;xeCJK&#125;</span><br><span class="line"><span class="keyword">\setCJKmainfont</span>[BoldFont=STZhongsong, ItalicFont=STKaiti]&#123;STSong&#125;</span><br><span class="line"><span class="keyword">\setCJKsansfont</span>[BoldFont=STHeiti]&#123;STXihei&#125;</span><br><span class="line"><span class="keyword">\setCJKmonofont</span>&#123;STFangsong&#125;</span><br></pre></td></tr></table></figure>
+
+<p>中文字体可简单使用 <code>\usepackage&#123;ctex&#125;</code></p>
+<p>并且对于中文等非西文字体的 <code>.tex</code> 源文件编译时，优先采用 <code>XeLaTeX</code>。毕竟原本 <code>XeTeX/XeLaTeX</code> 原本的设计目的就是增强对非西文字体的支持。</p>
+<h2 id="Beamer-主题"><a href="#Beamer-主题" class="headerlink" title="Beamer 主题"></a>Beamer 主题</h2><p>我比较喜欢的主题是 <code>CambridgeUS</code></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usetheme</span>&#123;CambridgeUS&#125;</span><br></pre></td></tr></table></figure>
+
+<p>挑选 Beamer 内置主题的话，可以参考 <a href="https://hartwork.org/beamer-theme-matrix/">Beamer Theem Matrix</a> 或者 <a href="https://mpetroff.net/files/beamer-theme-matrix/">Another Beamer Theme Matrix</a> </p>
+<p>当然，在主题之上还可以修改 <code>colortheme</code> 之类的。我挺喜欢正在使用的主题的默认的 <code>colortheme</code> 的，也就没改。</p>
+<h2 id="划分章节"><a href="#划分章节" class="headerlink" title="划分章节"></a>划分章节</h2><p>和普通的 <code>LaTeX</code> 文档类似，可以为 <code>Beamer</code> 添加章节信息。章节信息最后会用于生成目录。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">\subsection</span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="代码排版"><a href="#代码排版" class="headerlink" title="代码排版"></a>代码排版</h2><p>在一个 <code>frame</code> 中排版代码也是可以的，借助 <code>listings</code> 宏包的解决方法如下：</p>
+<p>下面这一部分可定义也可不定义，参考（复制于） <a href="https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings">WikiBooks</a></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;color&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mygreen&#125;&#123;rgb&#125;&#123;0,0.6,0&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mygray&#125;&#123;rgb&#125;&#123;0.5,0.5,0.5&#125;</span><br><span class="line"><span class="keyword">\definecolor</span>&#123;mymauve&#125;&#123;rgb&#125;&#123;0.58,0,0.82&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\lstset</span>&#123; </span><br><span class="line">    backgroundcolor=<span class="keyword">\color</span>&#123;white&#125;,   <span class="comment">% choose the background color; you must add \usepackage&#123;color&#125; or \usepackage&#123;xcolor&#125;; should come as last argument</span></span><br><span class="line">    basicstyle=<span class="keyword">\ttfamily</span><span class="keyword">\footnotesize</span>,        <span class="comment">% the size of the fonts that are used for the code</span></span><br><span class="line">    breakatwhitespace=true,         <span class="comment">% sets if automatic breaks should only happen at whitespace</span></span><br><span class="line">    breaklines=true,                 <span class="comment">% sets automatic line breaking</span></span><br><span class="line">    captionpos=b,                    <span class="comment">% sets the caption-position to bottom</span></span><br><span class="line">    commentstyle=<span class="keyword">\color</span>&#123;mygreen&#125;,    <span class="comment">% comment style</span></span><br><span class="line">    deletekeywords=&#123;...&#125;,            <span class="comment">% if you want to delete keywords from the given language</span></span><br><span class="line">    escapeinside=&#123;<span class="keyword">\%</span>*&#125;&#123;*)&#125;,          <span class="comment">% if you want to add LaTeX within your code</span></span><br><span class="line">    extendedchars=true,              <span class="comment">% lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8</span></span><br><span class="line">    frame=single,                   <span class="comment">% adds a frame around the code</span></span><br><span class="line">    keepspaces=false,                 <span class="comment">% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)</span></span><br><span class="line">    morekeywords=&#123;bit, sbit, sfr, sfr16&#125;,            <span class="comment">% if you want to add more keywords to the set</span></span><br><span class="line">    keywordstyle=<span class="keyword">\color</span>&#123;blue&#125;,       <span class="comment">% keyword style</span></span><br><span class="line">    language=C,                 <span class="comment">% the language of the code</span></span><br><span class="line">    numbers=left,                    <span class="comment">% where to put the line-numbers; possible values are (none, left, right)</span></span><br><span class="line">    numbersep=5pt,                   <span class="comment">% how far the line-numbers are from the code</span></span><br><span class="line">    numberstyle=<span class="keyword">\tiny</span><span class="keyword">\color</span>&#123;mygray&#125;, <span class="comment">% the style that is used for the line-numbers</span></span><br><span class="line">    rulecolor=<span class="keyword">\color</span>&#123;black&#125;,         <span class="comment">% if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))</span></span><br><span class="line">    showspaces=false,                <span class="comment">% show spaces everywhere adding particular underscores; it overrides &#x27;showstringspaces&#x27;</span></span><br><span class="line">    showstringspaces=false,          <span class="comment">% underline spaces within strings only</span></span><br><span class="line">    showtabs=false,                  <span class="comment">% show tabs within strings adding particular underscores</span></span><br><span class="line">    <span class="comment">%  stepnumber=2,                    % the step between two line-numbers. If it&#x27;s 1, each line will be numbered</span></span><br><span class="line">    stringstyle=<span class="keyword">\color</span>&#123;mymauve&#125;,     <span class="comment">% string literal style</span></span><br><span class="line">    tabsize=2,                 <span class="comment">% sets default tabsize to 2 spaces</span></span><br><span class="line">    title=<span class="keyword">\lstname</span>                   <span class="comment">% show the filename of files included with \lstinputlisting; also try caption instead of title</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面这部分参考 <a href="https://tex.stackexchange.com/questions/36776/latex-error-when-inserting-code-listing-in-lyx">StackExchange</a>。</p>
+<p>就是在需要排版代码的 <code>frame</code> 后加上参数 <code>fragile</code>。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[fragile]</span><br><span class="line">    <span class="keyword">\begin</span>&#123;lstlisting&#125;[language=...]</span><br><span class="line">        <span class="comment">% ...</span></span><br><span class="line">        <span class="comment">% CODE</span></span><br><span class="line">        <span class="comment">% ...</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;lstlisting&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+              <a href="/tags/Beamer/" rel="tag"># Beamer</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_x"></a>
+      <a class="a2a_button_wechat"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/markdown-syntax-support-test/" rel="prev" title="Markdown 语法支持测试">
+                  <i class="fa fa-angle-left"></i> Markdown 语法支持测试
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/interview-first-time/" rel="next" title="初次笔试题">
+                  初次笔试题 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2019 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">GuangLai He</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":"all","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"KnothHe/knothhe.github.io","issue_term":"pathname","theme":"photon-dark"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

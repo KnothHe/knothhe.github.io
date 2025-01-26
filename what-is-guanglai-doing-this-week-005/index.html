@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari_pinned_tab.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="google-site-verification" content="0geTufxIL_urRfGYXdanCSRXtO85KNnZTYDcIJ4M63Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.guanglai.me","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这周总算是把前端相关的基础看完了，快速地扫了一遍 HTML，CSS，JavaScript，TypeScript，Shadcn UI 相关的内容，接下来的安排就是准备做一些实际的项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="广来这周在做什么 005">
+<meta property="og:url" content="https://blog.guanglai.me/what-is-guanglai-doing-this-week-005/index.html">
+<meta property="og:site_name" content="~来都来了~">
+<meta property="og:description" content="这周总算是把前端相关的基础看完了，快速地扫了一遍 HTML，CSS，JavaScript，TypeScript，Shadcn UI 相关的内容，接下来的安排就是准备做一些实际的项目。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-29T15:42:41.000Z">
+<meta property="article:modified_time" content="2024-12-29T15:42:41.000Z">
+<meta property="article:author" content="GuangLai He">
+<meta property="article:tag" content="Life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.guanglai.me/what-is-guanglai-doing-this-week-005/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.guanglai.me/what-is-guanglai-doing-this-week-005/","path":"what-is-guanglai-doing-this-week-005/","title":"广来这周在做什么 005"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>广来这周在做什么 005 | ~来都来了~</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="~来都来了~" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">~来都来了~</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GuangLai 的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cheatsheet"><span class="nav-number">2.</span> <span class="nav-text">cheatsheet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI"><span class="nav-number">3.</span> <span class="nav-text">AI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%A8%E5%B1%80%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">3.1.</span> <span class="nav-text">1. 全局上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%87%BD%E6%95%B0%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">3.2.</span> <span class="nav-text">2. 函数上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-%E4%BD%9C%E4%B8%BA%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">3.2.1.</span> <span class="nav-text">a. 作为普通函数调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-%E4%BD%9C%E4%B8%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="nav-number">3.2.2.</span> <span class="nav-text">b. 作为对象的方法调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">3.2.3.</span> <span class="nav-text">c. 构造函数调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">3.3.</span> <span class="nav-text">3. 箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%98%BE%E5%BC%8F%E7%BB%91%E5%AE%9A"><span class="nav-number">3.4.</span> <span class="nav-text">4. 显式绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-call-%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.1.</span> <span class="nav-text">a. call 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-apply-%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.2.</span> <span class="nav-text">b. apply 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-bind-%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.3.</span> <span class="nav-text">c. bind 方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GuangLai He</p>
+  <div class="site-description" itemprop="description">GuangLai 的博客，记录一些生活、技术上的想法和实践</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/knothhe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;knothhe" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:guanglaihe@gmail.com" title="E-Mail → mailto:guanglaihe@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.guanglai.me/what-is-guanglai-doing-this-week-005/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GuangLai He">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="~来都来了~">
+      <meta itemprop="description" content="GuangLai 的博客，记录一些生活、技术上的想法和实践">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="广来这周在做什么 005 | ~来都来了~">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          广来这周在做什么 005<a href="https://github.com/knothhe/blog/tree/master/source/_posts/what-is-guanglai-doing-this-week-005.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-12-29 23:42:41" itemprop="dateCreated datePublished" datetime="2024-12-29T23:42:41+08:00">2024-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Weekly/" itemprop="url" rel="index"><span itemprop="name">Weekly</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这周总算是把前端相关的基础看完了，快速地扫了一遍 HTML，CSS，JavaScript，TypeScript，Shadcn UI 相关的内容，接下来的安排就是准备做一些实际的项目。</p>
+<span id="more"></span>
+
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p>最近一个多月都在唠叨前端相关的事情，真要认真学，就是以我现在上工作的时间，下班闲暇时间，一周的时间也绰绰有余了，毕竟也是工作了四年的多后端，虽然对前端技术不甚了解，对计算机系统的了解也是了然于心了，只是需要对前端相关的知识补充下认知。</p>
+<p>具体来说，这段时间我究竟做了什么呢？一开始就是看到了 Next.js 的两个教程。</p>
+<ul>
+<li><a href="https://nextjs.org/learn/react-foundations">React Foundations | Next.js</a></li>
+<li><a href="https://nextjs.org/learn/dashboard-app">Learn Next.js | Next.js</a></li>
+</ul>
+<p>跟着教程，一知半解地学完了 React 和 Next.js，这个时间点，我的前端知识库还是很久之前的，对 HTML，CSS，JavaScript 也是一知半解。也是多亏了 Next.js 的教程，我对前端工程有了基本的认知。因为对基础的三大基本组件（HTML…）不过，所以回炉重造，重新学了 HTML，CSS，JavaScript。</p>
+<p>之后顺便也弄懂了一些其他的前端组件。包含单不只是 TypeScript，Vite，TailwindCSS，Shadcn UI。</p>
+<p>MDN 也对前端工具链有一个扫盲方式的介绍，足够详细。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools">Understanding client-side web development tools - Learn web development | MDN</a></li>
+</ul>
+<p>就我个人的粗浅理解，以下是现代前端开发的主要工具链。</p>
+<ul>
+<li>基础 HTML，CSS，JavaScript。</li>
+<li>包管理器 npm，现代前端依赖管理的基石。</li>
+<li>node 是 JavaScript 在浏览器之外的运行时，主要服务于服务端相关技术。当然依赖管理等一系列的工作也依赖 node，并且还有其他类似 node 的运行时，比如 deno 和 bun，有很多可以写的，不细写了。</li>
+<li>UI 框架，React &#x2F; Vue 等。使用原生 HCJ 构建前端需要手动操作 DOM，UI 框架提供了更方便的组件工具用于构建 UI。</li>
+<li>PostCSS。原生 CSS 的功能有限，PostCSS 扩展了 CSS 的能力。</li>
+<li>组件库。CSS 基础之上，为了减少编写，管理，维护 CSS 的困难，出现的 TailwindCSS 之类处理 CSS 的组件库。</li>
+<li>UI 组件库。基于 CSS 组件库之上，一套可复用的 UI 组件库。</li>
+<li>构建工具。Vite 构建和减少代码提及，自动编写配置。</li>
+</ul>
+<p>其他还有编辑器相关的，格式化，和代码检测工具。可见现代前端工程十分庞杂，强大。</p>
+<h2 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h2><p>在了解完基础概念之后，作为快速过一遍的文档，<a href="https://cheatsheets.zip/">CheatSheets.zip - Ultimate Cheat for Developers</a> 是挺不错的，就像是记录好重点的学习笔记一样。</p>
+<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><p>这周经常性尝试使用 Github Copilot 辅助编程，我的体验还是比较舒服的。</p>
+<p>在大代码库的代码编写上，Github Copilot 爱莫能助，设计逻辑性相关的功能实现，如果比较复杂的部分，我会声明式地方式描述给 Copilot，让它帮忙编写函数，然后我再实际验证功能是否满足，这方面的体验良好。</p>
+<p>另一方面，我发现 Github Copilot Chat 用来学习编程非常棒。我一有不了解的技术概念就会直接提问给 Copilot，Copilot 的回复我看完之后基本就能了解这项技术概念了。辅助编程学习的体验非常良好。</p>
+<p>一个例子：</p>
+<blockquote>
+<p>Q: JavaScript this 关键字<br>在 JavaScript 中，<code>this</code> 关键字是一个非常重要的概念，它指向当前执行上下文的对象。<code>this</code> 的值在不同的上下文中会有所不同，因此理解它的工作原理对于编写正确的 JavaScript 代码至关重要。</p>
+<h3 id="1-全局上下文"><a href="#1-全局上下文" class="headerlink" title="1. 全局上下文"></a>1. 全局上下文</h3><p>在全局上下文中（即代码在函数外部运行时），<code>this</code> 指向全局对象。在浏览器中，全局对象是 <code>window</code>，在 Node.js 中，全局对象是 <code>global</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// 在浏览器中输出: Window</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-函数上下文"><a href="#2-函数上下文" class="headerlink" title="2. 函数上下文"></a>2. 函数上下文</h3><p>在函数内部，<code>this</code> 的值取决于函数的调用方式。</p>
+<h4 id="a-作为普通函数调用"><a href="#a-作为普通函数调用" class="headerlink" title="a. 作为普通函数调用"></a>a. 作为普通函数调用</h4><p>当函数作为普通函数调用时，<code>this</code> 指向全局对象（在严格模式下，<code>this</code> 是 <code>undefined</code>）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">showThis</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">showThis</span>(); <span class="comment">// 在非严格模式下输出: Window (浏览器中)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="b-作为对象的方法调用"><a href="#b-作为对象的方法调用" class="headerlink" title="b. 作为对象的方法调用"></a>b. 作为对象的方法调用</h4><p>当函数作为对象的方法调用时，<code>this</code> 指向调用该方法的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">greet</span>(); <span class="comment">// 输出: Alice</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="c-构造函数调用"><a href="#c-构造函数调用" class="headerlink" title="c. 构造函数调用"></a>c. 构造函数调用</h4><p>当函数作为构造函数调用时（使用 <code>new</code> 关键字），<code>this</code> 指向新创建的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Bob&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person1.<span class="property">name</span>); <span class="comment">// 输出: Bob</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-箭头函数"><a href="#3-箭头函数" class="headerlink" title="3. 箭头函数"></a>3. 箭头函数</h3><p>箭头函数没有自己的 <code>this</code> 值，它会捕获其所在上下文的 <code>this</code> 值，即箭头函数中的 <code>this</code> 是在它定义时决定的，而不是在调用时决定的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Charlie&#x27;</span>,</span><br><span class="line">  <span class="attr">greet</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">arrowFunction</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">arrowFunction</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">greet</span>(); <span class="comment">// 输出: Charlie</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-显式绑定"><a href="#4-显式绑定" class="headerlink" title="4. 显式绑定"></a>4. 显式绑定</h3><p>可以使用 <code>call</code>、<code>apply</code> 和 <code>bind</code> 方法显式地绑定 <code>this</code>。</p>
+<h4 id="a-call-方法"><a href="#a-call-方法" class="headerlink" title="a. call 方法"></a>a. <code>call</code> 方法</h4><p><code>call</code> 方法调用一个函数，并显式指定 <code>this</code> 的值和参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span>: <span class="string">&#x27;Dave&#x27;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">call</span>(user); <span class="comment">// 输出: Dave</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="b-apply-方法"><a href="#b-apply-方法" class="headerlink" title="b. apply 方法"></a>b. <code>apply</code> 方法</h4><p><code>apply</code> 方法类似于 <code>call</code>，但它接受一个参数数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params">greeting</span>) &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(greeting + <span class="string">&#x27;, &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span>: <span class="string">&#x27;Eve&#x27;</span> &#125;;</span><br><span class="line">greet.<span class="title function_">apply</span>(user, [<span class="string">&#x27;Hello&#x27;</span>]); <span class="comment">// 输出: Hello, Eve</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="c-bind-方法"><a href="#c-bind-方法" class="headerlink" title="c. bind 方法"></a>c. <code>bind</code> 方法</h4><p><code>bind</code> 方法创建一个新的函数，并将 <code>this</code> 绑定到指定的对象，新的函数可以在以后调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span>: <span class="string">&#x27;Frank&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> boundGreet = greet.<span class="title function_">bind</span>(user);</span><br><span class="line"><span class="title function_">boundGreet</span>(); <span class="comment">// 输出: Frank</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><strong>全局上下文</strong>：<code>this</code> 指向全局对象（浏览器中是 <code>window</code>，Node.js 中是 <code>global</code>）。</li>
+<li><strong>函数上下文</strong>：<code>this</code> 的值取决于函数的调用方式（普通函数、对象方法、构造函数）。</li>
+<li><strong>箭头函数</strong>：<code>this</code> 绑定在定义时的上下文。</li>
+<li><strong>显式绑定</strong>：使用 <code>call</code>、<code>apply</code> 和 <code>bind</code> 方法可以显式绑定 <code>this</code>。</li>
+</ul>
+<p>理解 <code>this</code> 的行为对于编写和调试 JavaScript 代码至关重要。通过掌握这些规则，你可以更准确地控制函数的执行上下文。</p>
+</blockquote>
+<p>基础的点都有提到，很棒了。</p>
+<p>模型方面，Github Copilot 现在提供的基础版本是 GPT-4o，作为预览的功能，可以切换到 o1-mini，o1，或者 Claude 3.5 Sonnet。但是在辅助学习方面还是 GPT-4o 最快也最方便。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>最近有打算写一个简单的浏览器插件，也是我自己想要用的浏览器插件，本身功能还是比较简单的，基于 AI 辅助，一边学习一边写，完成一个工程会比较有成就感就是。</p>
+<p>Roadmap.sh 中的前端部分也还是要继续跟的，往全栈发展。如果有时间，真的，写一个博客网站？但是部署是个很大的问题。</p>
+<p>涉及到代码部署的部分，前端相关 Vercel 的免费版本基本满足需求，如果我构建的网站流量能够达到免费流量之外，那么 20 美元一个月的付费版本我觉得也可以接受，这个阶段，我也应该在网站上有收入了。也是我的最终目的。</p>
+<p>路漫漫，一步步走。考虑未来，享受当下。下周见。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Life/" rel="tag"># Life</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_x"></a>
+      <a class="a2a_button_wechat"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/what-is-guanglai-doing-this-week-004/" rel="prev" title="广来这周在做什么 004">
+                  <i class="fa fa-angle-left"></i> 广来这周在做什么 004
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/what-is-guanglai-doing-this-week-006/" rel="next" title="广来这周在做什么 006">
+                  广来这周在做什么 006 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2019 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">GuangLai He</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":"all","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"KnothHe/knothhe.github.io","issue_term":"pathname","theme":"photon-dark"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari_pinned_tab.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="google-site-verification" content="0geTufxIL_urRfGYXdanCSRXtO85KNnZTYDcIJ4M63Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.guanglai.me","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一直以来都不能非常清楚地记住浮点数的表示方式，这段时间开始重读 CSAPP 的第二章中浮点数表示的部分，大致上弄清楚了 IEEE 浮点数的表示方式。 简单介绍一下 IEEE 浮点数的表示方式，细节部分可以参考 CSAPP 和 维基">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IEEE 浮点数表示">
+<meta property="og:url" content="https://blog.guanglai.me/ieee-floating-point-representation/index.html">
+<meta property="og:site_name" content="~来都来了~">
+<meta property="og:description" content="一直以来都不能非常清楚地记住浮点数的表示方式，这段时间开始重读 CSAPP 的第二章中浮点数表示的部分，大致上弄清楚了 IEEE 浮点数的表示方式。 简单介绍一下 IEEE 浮点数的表示方式，细节部分可以参考 CSAPP 和 维基">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-17T07:52:25.000Z">
+<meta property="article:modified_time" content="2025-01-26T21:06:26.304Z">
+<meta property="article:author" content="GuangLai He">
+<meta property="article:tag" content="IEEE 754">
+<meta property="article:tag" content="Floating Point">
+<meta property="article:tag" content="CSAPP">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.guanglai.me/ieee-floating-point-representation/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.guanglai.me/ieee-floating-point-representation/","path":"ieee-floating-point-representation/","title":"IEEE 浮点数表示"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>IEEE 浮点数表示 | ~来都来了~</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="~来都来了~" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">~来都来了~</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GuangLai 的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B0%8F%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">二进制小数表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IEEE-%E6%B5%AE%E7%82%B9%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">IEEE 浮点数表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E6%A0%BC%E5%8C%96%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">规格化数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%A7%84%E6%A0%BC%E5%8C%96%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">非规格化数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E5%A4%A7"><span class="nav-number">2.3.</span> <span class="nav-text">无穷大</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GuangLai He</p>
+  <div class="site-description" itemprop="description">GuangLai 的博客，记录一些生活、技术上的想法和实践</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/knothhe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;knothhe" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:guanglaihe@gmail.com" title="E-Mail → mailto:guanglaihe@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.guanglai.me/ieee-floating-point-representation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GuangLai He">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="~来都来了~">
+      <meta itemprop="description" content="GuangLai 的博客，记录一些生活、技术上的想法和实践">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="IEEE 浮点数表示 | ~来都来了~">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          IEEE 浮点数表示<a href="https://github.com/knothhe/blog/tree/master/source/_posts/ieee-floating-point-representation.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-17 15:52:25" itemprop="dateCreated datePublished" datetime="2019-05-17T15:52:25+08:00">2019-05-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-27 05:06:26" itemprop="dateModified" datetime="2025-01-27T05:06:26+08:00">2025-01-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>一直以来都不能非常清楚地记住浮点数的表示方式，这段时间开始重读 CSAPP 的第二章中浮点数表示的部分，大致上弄清楚了 IEEE 浮点数的表示方式。</p>
+<p>简单介绍一下 IEEE 浮点数的表示方式，细节部分可以参考 CSAPP 和 <a href="https://en.wikipedia.org/wiki/IEEE_754">维基</a></p>
+<span id="more"></span>
+
+<h2 id="二进制小数表示"><a href="#二进制小数表示" class="headerlink" title="二进制小数表示"></a>二进制小数表示</h2><p>首先理解一下十进制小数的表示方式，我们以下面这种方式表示十进制小数：</p>
+<p>$$<br>    d_{n}d_{n-1}…d_{1}d_{0}.d_{-1}…d_{m}<br>$$</p>
+<p>表示的值为：</p>
+<p>$$<br>    \sum_{i &#x3D; m}^{n} 10^{i}d_{i}<br>$$</p>
+<p>类似地，二进制小数的表示方式：</p>
+<p>$$<br>    b_{n}b_{n-1}…b_{1}b_{0}.b_{-1}…b_{m}<br>$$</p>
+<p>$$<br>    \sum_{i &#x3D; m}^{n} 2^{i}b_{i}<br>$$</p>
+<p>例如二进制小数</p>
+<p>$$<br>11.01_2 &#x3D; 1 \times 2^{1} + 1 \times 2^{0} + 0 \times 2^{-1} + 1 \times 2^{-2}<br>    &#x3D; 2 + 1 + 0 + 0.25<br>    &#x3D; 3.25<br>$$</p>
+<p>现在考虑如何对这种二进制小数进行编码，一种可行的方式是定点小数。即将小数点的位置固定。例如使用 16 位二进制数来编码定点小数。可以做如下规定：</p>
+<ol>
+<li>第 15 位为符号位。</li>
+<li>第 14 ~ 9 位表示小数点前的数</li>
+<li>第 8 ~ 0 位表示小数点后的数</li>
+</ol>
+<p>那么，$11.01$ 可以编码为 $0 000011 010000000$。</p>
+<p>这种表示方式的优点是比较简单，但是能够表示的小数的范围就十分的小。不考虑小数点后的数字，这种方式能够表示的整数范围就只能是 $-2^{6}+1 \sim 2^{6} - 1$。</p>
+<p>于是，考虑到不去固定小数点的位置。而是根据当前的数字来确定小数点的具体位置。这样，就有了一种新的表示小数的方式，即浮点数。以下面这种方式表示（不考虑编码方式）：</p>
+<p>$$<br>    V &#x3D; (-1)^s \times M \times 2^{E}<br>$$</p>
+<p>其中，$s$ 表示符号位，$E$ 表示阶码，$M$ 表示尾数。</p>
+<p>通过这种方式，就有了 IEEE 754 浮点数规范。其具体定义了浮点数的位级编码规则。</p>
+<h2 id="IEEE-浮点数表示"><a href="#IEEE-浮点数表示" class="headerlink" title="IEEE 浮点数表示"></a>IEEE 浮点数表示</h2><p>首先， IEEE 将浮点数编码为 32 位或者 64 位。其中，32 位的规则如下：</p>
+<ol>
+<li>第 32 位表示符号</li>
+<li>第 31 ~ 23 位表示的值为 $E$，其位级表示记为 $exp$</li>
+<li>第 22 ~ 0 位表示的值 $M$, 其位级表示记为 $frac$</li>
+</ol>
+<p>64 位编码表示中，$exp$ 长度为 11，$frac$ 长度为 52。与 32 位类似。</p>
+<p>根据 $exp$ 和 $frac$ 的表示的不同，IEEE 浮点数规范将浮点数分为 4 类：</p>
+<ol>
+<li>规格化数： $exp$ 不为全 0 和全 1</li>
+<li>非规格化数： $exp$ 为全 0</li>
+<li>无穷大： $exp$ 为全 1 且 $frac$ 为全 0</li>
+<li>$NAN$： $exp$ 为全 1 且 $frac$ 不为全 0</li>
+</ol>
+<h3 id="规格化数"><a href="#规格化数" class="headerlink" title="规格化数"></a>规格化数</h3><p>首先 $E &#x3D; e - Bias$, 其中 $e$ 为 $exp$ 所表示的无符号数。$Bias$ 的值为 $2^{k-1}-1$，$k$ 为 $frac$ 部分的长度。例如，32 位编码时 $k$ 的值为 $8$，于是 $Bias$ 的值为 $127$，最终， $E$ 的范围为 $-126 \sim 127$。</p>
+<p>其次 $M &#x3D; 1 + f$，其中 $f$ 为 $0.f_{n}f_{n-1}…f_{0}$ 所表示的值。这里，通过将 $f$ 加 1 获得了一个额外的表示精度位。</p>
+<h3 id="非规格化数"><a href="#非规格化数" class="headerlink" title="非规格化数"></a>非规格化数</h3><p>其 $E &#x3D; 1 - Bias$，而 $M &#x3D; f$。</p>
+<p>根据该定义，当 $frac$ 为全 0 时， $M &#x3D; 0$。于是：</p>
+<p>$$<br>    V &#x3D; (-1)^s \times E \times 0 &#x3D; 0<br>$$</p>
+<p>根据 $s$ 的值的不同，得到了表示 0 的两种方式，记为 $+0$ 和 $-0$。</p>
+<h3 id="无穷大"><a href="#无穷大" class="headerlink" title="无穷大"></a>无穷大</h3><p>根据符号位分为 $+\infty$ 和 $-\infty$。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一般来说，非规格化数用于表示 $0$ 和非常接近 $0$ 的数。而相对其他能正常表示的数则用规格化数表示，溢出的值则用无穷大表示。当溢出的小数部分为非 $0$ 即可用 $NAN$（Not A Number)表示。当一些运算的结果不是实数或者无穷时，就会返回 $NAN$，比如 $\sqrt{-1}$。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>写技术文章需要严谨、正确，可能我比没有做到。所有如果有疑惑的话，可以学习一下 CSAPP 中和此有关的内容。</p>
+<!-- 我后悔写这篇博客了，描述好一个规范并不是一件容易的事。想要讲的正确且生动就更加不容易了。但是因为已经写了，于是还是决定放出来。以后如果再打算写类似的博客一定会仔细考虑考虑。
+
+而且，实际上 CSAPP 上的这一小节讲述的已经足够清楚了。 -->
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/IEEE-754/" rel="tag"># IEEE 754</a>
+              <a href="/tags/Floating-Point/" rel="tag"># Floating Point</a>
+              <a href="/tags/CSAPP/" rel="tag"># CSAPP</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_x"></a>
+      <a class="a2a_button_wechat"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/interview-first-time/" rel="prev" title="初次笔试题">
+                  <i class="fa fa-angle-left"></i> 初次笔试题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/vscode-linux-debugger-launch/" rel="next" title="Linux 下 VS Code 的 C/C++ 调试器使用">
+                  Linux 下 VS Code 的 C/C++ 调试器使用 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2019 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">GuangLai He</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.min.js","integrity":"sha256-G8ouPAnw4zzMbnAenHnVz6h9XpKbNdOkrqTh7AadyHs="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":"all","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"KnothHe/knothhe.github.io","issue_term":"pathname","theme":"photon-dark"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
