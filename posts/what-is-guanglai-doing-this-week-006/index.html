@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="zh" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/"><meta name="generator" content="Astro v4.16.18"><!-- katex --><script src="/toggle-theme.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"><!-- General Meta Tags --><title>广来这周在做什么 006 | ~来都来了~</title><meta name="title" content="广来这周在做什么 006 | ~来都来了~"><meta name="description" content="这周基本没有再继续学习前端了，尝试用学到的技术栈做一个实际的项目，最后想到一个之前想做的 Chrome 扩展，就是动手实现了这个扩展，并且成功上架到了 Chrome 商店。"><meta name="author" content="Guang Lai"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="广来这周在做什么 006 | ~来都来了~"><meta property="og:description" content="这周基本没有再继续学习前端了，尝试用学到的技术栈做一个实际的项目，最后想到一个之前想做的 Chrome 扩展，就是动手实现了这个扩展，并且成功上架到了 Chrome 商店。"><meta property="og:url" content="https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/"><meta property="og:image" content="https://blog.guanglai.me/posts/%E5%B9%BF%E6%9D%A5%E8%BF%99%E5%91%A8%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88-006.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2025-01-05T23:00:27.000Z"><meta property="article:modified_time" content="2025-01-05T23:00:27.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/"><meta property="twitter:title" content="广来这周在做什么 006 | ~来都来了~"><meta property="twitter:description" content="这周基本没有再继续学习前端了，尝试用学到的技术栈做一个实际的项目，最后想到一个之前想做的 Chrome 扩展，就是动手实现了这个扩展，并且成功上架到了 Chrome 商店。"><meta property="twitter:image" content="https://blog.guanglai.me/posts/%E5%B9%BF%E6%9D%A5%E8%BF%99%E5%91%A8%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88-006.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"广来这周在做什么 006 | ~来都来了~","image":"https://blog.guanglai.me/posts/%E5%B9%BF%E6%9D%A5%E8%BF%99%E5%91%A8%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88-006.png","datePublished":"2025-01-05T23:00:27.000Z","dateModified":"2025-01-05T23:00:27.000Z","author":[{"@type":"Person","name":"Guang Lai","url":"https://blog.guanglai.me/about"}]}</script><!-- Google Font --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet';" crossorigin><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script src="/toggle-theme.js" async></script><link rel="stylesheet" href="/_astro/about.CR3FwOSM.css">
+<style>a:where(.astro-blwjyjpt){position:relative;text-decoration-line:underline;text-decoration-style:dashed}a:where(.astro-blwjyjpt):hover{top:-.125rem;--tw-text-opacity: 1;color:rgba(var(--color-accent),var(--tw-text-opacity, 1))}a:where(.astro-blwjyjpt):focus-visible{padding:.25rem}a:where(.astro-blwjyjpt) svg:where(.astro-blwjyjpt){margin-right:-1.25rem;height:1.5rem;width:1.5rem;--tw-scale-x: .95;--tw-scale-y: .95;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));--tw-text-opacity: 1;color:rgba(var(--color-text-base),var(--tw-text-opacity, 1));opacity:.8}.group:where(.astro-blwjyjpt):hover a:where(.astro-blwjyjpt) svg:where(.astro-blwjyjpt){fill:rgb(var(--color-accent))}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+.social-icons:where(.astro-wkojbtzc){display:flex;flex-direction:column;flex-wrap:wrap;align-items:center;justify-content:center;gap:.25rem}@media (min-width: 640px){.social-icons:where(.astro-wkojbtzc){align-items:flex-start}}.link-button:where(.astro-wkojbtzc){--tw-scale-x: .9;--tw-scale-y: .9;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));padding:.5rem}.link-button:where(.astro-wkojbtzc):hover{--tw-rotate: 6deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.link-button:where(.astro-wkojbtzc){padding:.25rem}}main:where(.astro-vj4tpspi){margin-left:auto;margin-right:auto;width:100%;max-width:48rem;padding-left:1rem;padding-right:1rem;padding-bottom:3rem}.post-title:where(.astro-vj4tpspi){font-size:1.5rem;line-height:2rem;font-weight:600;--tw-text-opacity: 1;color:rgba(var(--color-accent),var(--tw-text-opacity, 1))}
+</style><script type="module" src="/_astro/hoisted.Ccr0FvUn.js"></script><style>[data-astro-transition-scope="astro-plk3gbjq-1"] { view-transition-name: \5E7F\6765\8FD9\5468\5728\505A\4EC0\4E48-006; }@layer astro { ::view-transition-old(\5E7F\6765\8FD9\5468\5728\505A\4EC0\4E48-006) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\5E7F\6765\8FD9\5468\5728\505A\4EC0\4E48-006) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\5E7F\6765\8FD9\5468\5728\505A\4EC0\4E48-006) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\5E7F\6765\8FD9\5468\5728\505A\4EC0\4E48-006) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: life; }@layer astro { ::view-transition-old(life) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(life) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(life) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(life) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body>  <header class="astro-3ef6ksr2"> <a id="skip-to-content" href="#main-content" class="astro-3ef6ksr2">Skip to content</a> <div class="nav-container astro-3ef6ksr2"> <div class="top-nav-wrap astro-3ef6ksr2"> <a href="/" class="logo whitespace-nowrap astro-3ef6ksr2"> ~来都来了~ </a> <nav id="nav-menu" class="astro-3ef6ksr2"> <button class="hamburger-menu focus-outline astro-3ef6ksr2" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="menu-icon astro-3ef6ksr2"> <line x1="7" y1="12" x2="21" y2="12" class="line astro-3ef6ksr2"></line> <line x1="3" y1="6" x2="21" y2="6" class="line astro-3ef6ksr2"></line> <line x1="12" y1="18" x2="21" y2="18" class="line astro-3ef6ksr2"></line> <line x1="18" y1="6" x2="6" y2="18" class="close astro-3ef6ksr2"></line> <line x1="6" y1="6" x2="18" y2="18" class="close astro-3ef6ksr2"></line> </svg> </button> <ul id="menu-items" class="display-none sm:flex astro-3ef6ksr2"> <li class="astro-3ef6ksr2"> <a href="/posts/" class=" astro-3ef6ksr2">
+Posts
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/tags/" class=" astro-3ef6ksr2">
+Tags
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/about/" class=" astro-3ef6ksr2">
+About
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/archives/" class="group inline-block hover:text-skin-accent focus-outline flex justify-center p-3 sm:p-1 astro-3ef6ksr2" aria-label="archives" title="Archives"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icons-tabler-outline !hidden sm:!inline-block astro-3ef6ksr2">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-3ef6ksr2"></path> <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" class="astro-3ef6ksr2"></path> <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" class="astro-3ef6ksr2"></path> <path d="M10 12l4 0" class="astro-3ef6ksr2"></path>  </svg> <span class="sm:sr-only astro-3ef6ksr2">
+Archives
+</span> </a> </li> <li class="astro-3ef6ksr2"> <a href="/search/" class="group inline-block hover:text-skin-accent focus-outline p-3 sm:p-1  flex astro-3ef6ksr2" aria-label="search" title="Search"> <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3ef6ksr2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3ef6ksr2"></path> </svg> <span class="sr-only astro-3ef6ksr2">Search</span> </a> </li> <li class="astro-3ef6ksr2"> <button id="theme-btn" class="focus-outline astro-3ef6ksr2" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg" class="astro-3ef6ksr2"> <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z" class="astro-3ef6ksr2"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg" class="astro-3ef6ksr2"> <path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z" class="astro-3ef6ksr2"></path> </svg> </button> </li> </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-skin-line" aria-hidden="true"> </div> </header>   <div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-vj4tpspi"> <button class="focus-outline mb-2 mt-8 flex hover:opacity-75 astro-vj4tpspi" onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"> <svg xmlns="http://www.w3.org/2000/svg" class="astro-vj4tpspi"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg><span class="astro-vj4tpspi">Go back</span> </button> </div> <main id="main-content" class="astro-vj4tpspi"> <h1 class="post-title inline-block astro-vj4tpspi" data-astro-transition-scope="astro-plk3gbjq-1"> 广来这周在做什么 006 </h1> <div class="flex items-center space-x-2 opacity-80 my-2 astro-vj4tpspi"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Published:</span><span class="italic text-base"><time dateTime="2025-01-05T23:00:27.000Z">2025年1月5日</time><span aria-hidden="true"> | </span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/knothhe/blog-astro/edit/main/src/content/blog/what-is-guanglai-doing-this-week-006.md" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icons-tabler-outline icon-tabler-edit inline-block !scale-90 fill-skin-base" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path><path d="M16 5l3 3"></path></svg><span class="text-base italic">Suggest Changes</span></a></span></div> <aside class="lg:block fixed left-[82%] top-32 order-2 -me-32 hidden basis-64"> <h2 class="font-semibold">Table of Contents</h2> <ul class="mt-4 text-sm"> <li class=""> <a aria-label="Scroll to section: 跨年夜的烟花" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#跨年夜的烟花"><span class="me-0.5"></span>跨年夜的烟花</a>  </li><li class=""> <a aria-label="Scroll to section: Chrome 扩展" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#chrome-扩展"><span class="me-0.5"></span>Chrome 扩展</a>  </li><li class=""> <a aria-label="Scroll to section: AI 编程" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#ai-编程"><span class="me-0.5"></span>AI 编程</a>  </li><li class=""> <a aria-label="Scroll to section: AI 工具" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#ai-工具"><span class="me-0.5"></span>AI 工具</a>  </li><li class=""> <a aria-label="Scroll to section: 羽毛球" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#羽毛球"><span class="me-0.5"></span>羽毛球</a>  </li><li class=""> <a aria-label="Scroll to section: 赚钱" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#赚钱"><span class="me-0.5"></span>赚钱</a>  </li><li class=""> <a aria-label="Scroll to section: 最后" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#最后"><span class="me-0.5"></span>最后</a>  </li> </ul> </aside> <article id="article" class="prose mx-auto mt-8 max-w-3xl astro-vj4tpspi"> <p>这周基本没有再继续学习前端了，尝试用学到的技术栈做一个实际的项目，最后想到一个之前想做的 Chrome 扩展，就是动手实现了这个扩展，并且成功上架到了 Chrome 商店。</p>
+<h2 id="跨年夜的烟花">跨年夜的烟花</h2>
+<p><img  src="/_astro/wusongkou-flash01.CmD_eXtE_Z2hsXGq.webp" alt="上海吴淞口 2024 元旦烟花 01" width="2268" height="4032" loading="lazy" decoding="async">
+<img  src="/_astro/wusongkou-flash02.Bhg4Fv3h_nP73s.webp" alt="上海吴淞口 2024 元旦烟花 02" width="2268" height="4032" loading="lazy" decoding="async">
+<img  src="/_astro/wusongkou-flash03.DinsmS1p_zJBch.webp" alt="上海吴淞口 2024 元旦烟花 03" width="2268" height="4032" loading="lazy" decoding="async"></p>
+<p>过去的一周刚好包含了元旦，跨过了 2024 年，现在是 2025 年了，所以这篇是 2025 年的第一篇 🎇。上面是上海吴淞口的元旦跨年烟花。当天是之前在网络上聊过的一个女生，简化版本的邀约就是，她询问我要不要一起去吴淞口看烟花。31 号晚上我本身也没有什么安排，也就欣然赴约。不得不说，跨年夜出门的人是相当的多，如果真的准备跨年的话，还是要提早出发的。我是六点多出发的，已经没办法去到观看烟花的最佳位置了。最后就是在一个狭小的角落看完了无人机和烟花秀。当天和女生聊了很多爱好，习惯，看法之类的话题，我觉得聊得是非常开心的。我们当天是聊到了凌晨三点半才各自打车回家。毕竟如果真的聊得一般的话，我觉得双方都不会在大冬天的大半夜外面聊到凌晨三点多吧。所以我原本以为是遇到了合适的，同频的朋友，回来之后的聊天就给了我当头一棒。女生回复我的消息是相当之慢的，大概十几分钟到十几小时会回复下我的消息吧。以至于给我的感觉是把即时通讯软件，使用成了邮箱这样的电子书信方式的聊天工具。</p>
+<h2 id="chrome-扩展">Chrome 扩展</h2>
+<p>这周刚开始，就有了做一个 Chrome 扩展的想法，索性也是做好了。插件最终上架到了 Chrome 商店，给了我非常大的成就感。Chrome 商店的开发者帐号，只需要一次支付 5 刀就可以一直上传扩展。扩展的名称是 Url Tools，当前的主要功能就是在扩展弹窗里，解析输入的 url 参数，并且允许编辑解析后的 url 参数，最后获取编辑后的 url 参数。我的后续计划是会继续往扩展里增加新的功能。TODO 项增加量了。这里是<a href="https://chromewebstore.google.com/detail/url-tools/hhcimehhgoefjjonjmmjglibjmdbdfph">扩展在 Chrome 商店的地址</a>。</p>
+<p>插件整体是使用现在前端技术构建的，具体使用了 React，TypeScript，TailwindCSS，Vite，Shadcn UI。技术选型上都是我做的技术选型，也是以后我做独立开发，独立网站的技术选型，借助了 Github Copilot 辅助编程。当然做网站的话，需要加上 Next.js 就完整了，但是浏览器扩展就实在是不需要 Next.js 的那些功能了。</p>
+<h2 id="ai-编程">AI 编程</h2>
+<p>上面的 Chrome 扩展就是我在 Github Copilot 的帮助下辅助编程的，也正如 Copilot 的名称展示的，Copilot 给我的感觉是非常有限。这两天我又接触到了 Deepseek，加上 VS Code 的插件，Roo Cline，在 VS Code 上的体验，我个人觉得是比 Copilot 优秀的。不够也不用局限于单一产品，这两者在 VS Code 上同时使用也并不冲突。继续体验使用 AI 辅助编程就好了。</p>
+<h2 id="ai-工具">AI 工具</h2>
+<p>既然上面提到的 AI 编程，AI 最大的用途还是在各种生活场景里使用，什么不懂了，不知道了，就都可以尝试问问 AI。我现在正常在使用的 AI 模型，除了 Copilot，还有 ChatGPT，和 Deepseek。ChatGPT 本身就提供了足够可用的免费的模型，Deepseek 则更多是在提供 API token 方面。目前 AI 大模型整体的开放 API 都是兼容 OpenAI 的，所以只需要一个 API token，同一个工具就可以在各家大模型之间切换了。</p>
+<p>Deepseek 目前正好在优惠体验期，价格上也算便宜，我把主力在用的工具都使用上了 Deepseek 的 API token。</p>
+<ul>
+<li>immersivetranslate，Chrome 的扩展，沉浸式翻译。在网页中翻译大量的英文文本非常舒服，本身自带的免费翻译功能是有 Bing 和 Google 提供的。如果要使用其他能力，需要付费升级为 Pro 版本，或者使用大模型厂商提供的 API token。我就尝试使用了 Deepseek 替换了默认的 Google 翻译。</li>
+<li>VS Code。上文也有提到，VS Code 中，使用 Roo Cline（Cline 的 fork），编码方面的体验也是非常优秀的。</li>
+<li>ChatBox 如果需要有着面级别的聊天对话框，我尝试了 ChatBox，目前还没有怎么体验，如果后续有的话，再更新体验。</li>
+</ul>
+<h2 id="羽毛球">羽毛球</h2>
+<p>最近羽毛球打的次数非常少了，今天也是上完了最后一次的羽毛球教练课。这两天的天气倒是比上周暖和了一些，没有之前那么得冷了。上周看到的把羽毛球场换成了篮球场的地方，这周又换回了羽毛球的场地，我猜测是因为篮球太超了，还没有和羽毛球场地之间有隔断:)</p>
+<h2 id="赚钱">赚钱</h2>
+<p>最近有想过投资和做独立网站赚钱，还在努力学习中。</p>
+<h2 id="最后">最后</h2>
+<p>以上就是这周我主要在做的事情了，下周见。</p> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/life/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+&nbsp;<span class="astro-blwjyjpt">life</span> </a> </li>  </ul> <div class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4 astro-vj4tpspi"> <button id="back-to-top" class="focus-outline whitespace-nowrap py-1 hover:opacity-75 astro-vj4tpspi"> <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90 astro-vj4tpspi"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg> <span class="astro-vj4tpspi">Back to Top</span> </button> <div class="social-icons astro-wkojbtzc"> <span class="italic astro-wkojbtzc">Share this post on:</span> <div class="text-center astro-wkojbtzc"> <a href="https://x.com/intent/post?url=https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post on X"> <svg  
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg> <span class="sr-only astro-wkojbtzc">Share this post on X</span> </a><a href="https://t.me/share/url?url=https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post via Telegram"> <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon-tabler"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+      </svg> <span class="sr-only astro-wkojbtzc">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post on Pinterest"> <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="8" y1="20" x2="12" y2="11"></line>
+      <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+    </svg> <span class="sr-only astro-wkojbtzc">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-006/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post via email"> <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <polyline points="3 7 12 13 21 7"></polyline>
+    </svg> <span class="sr-only astro-wkojbtzc">Share this post via email</span> </a> </div> </div>  </div> <hr class="my-6 border-dashed astro-vj4tpspi"> <!-- Previous/Next Post Buttons --> <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 astro-vj4tpspi"> <a href="/posts/what-is-guanglai-doing-this-week-007" class="flex w-full gap-1 hover:opacity-75 astro-vj4tpspi"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left flex-none astro-vj4tpspi">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-vj4tpspi"></path> <path d="M15 6l-6 6l6 6" class="astro-vj4tpspi"></path>  </svg> <div class="astro-vj4tpspi"> <span class="astro-vj4tpspi">Previous Post</span> <div class="text-sm text-skin-accent/85 astro-vj4tpspi">广来这周在做什么 007</div> </div> </a> <a href="/posts/what-is-guanglai-doing-this-week-005" class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2 astro-vj4tpspi"> <div class="astro-vj4tpspi"> <span class="astro-vj4tpspi">Next Post</span> <div class="text-sm text-skin-accent/85 astro-vj4tpspi">广来这周在做什么 005</div> </div> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none astro-vj4tpspi">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-vj4tpspi"></path> <path d="M9 6l6 6l-6 6" class="astro-vj4tpspi"></path>  </svg> </a> </div> </main> <footer class="mt-auto astro-sz7xmlte"> <div class="max-w-3xl mx-auto px-0"> <hr class="border-skin-line" aria-hidden="true"> </div> <div class="footer-wrapper astro-sz7xmlte"> <div class="social-icons flex astro-upu6fzxr"> <a href="https://github.com/knothhe" class="group inline-block hover:text-skin-accent link-button astro-upu6fzxr" title=" ~来都来了~ on Github"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+    ></path>
+  </svg> <span class="sr-only astro-upu6fzxr"> ~来都来了~ on Github</span> </a> </div>  <div class="copyright-wrapper astro-sz7xmlte"> <span class="astro-sz7xmlte">Copyright &#169; 2025</span> <span class="separator astro-sz7xmlte">&nbsp;|&nbsp;</span> <span class="astro-sz7xmlte">All rights reserved.</span> </div> </div> </footer>   </body></html>  <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className =
+        "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    document.querySelector("#back-to-top")?.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  }
+  backToTop();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
