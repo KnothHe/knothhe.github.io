@@ -1,0 +1,607 @@
+<!DOCTYPE html><html lang="zh" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://blog.guanglai.me/posts/blog-migrate-to-astro/"><meta name="generator" content="Astro v4.16.18"><!-- katex --><script src="/toggle-theme.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"><!-- General Meta Tags --><title>博客折腾小计，迁移 Astro | ~来都来了~</title><meta name="title" content="博客折腾小计，迁移 Astro | ~来都来了~"><meta name="description" content="折腾了下博客框架，记录下迁移过程中碰到的一些问题"><meta name="author" content="Guang Lai"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:title" content="博客折腾小计，迁移 Astro | ~来都来了~"><meta property="og:description" content="折腾了下博客框架，记录下迁移过程中碰到的一些问题"><meta property="og:url" content="https://blog.guanglai.me/posts/blog-migrate-to-astro/"><meta property="og:image" content="https://blog.guanglai.me/posts/%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%A1%EF%BC%8C%E8%BF%81%E7%A7%BB-astro.png"><!-- Article Published/Modified time --><meta property="article:published_time" content="2025-02-07T17:04:19.000Z"><meta property="article:modified_time" content="2025-02-07T17:04:28.000Z"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://blog.guanglai.me/posts/blog-migrate-to-astro/"><meta property="twitter:title" content="博客折腾小计，迁移 Astro | ~来都来了~"><meta property="twitter:description" content="折腾了下博客框架，记录下迁移过程中碰到的一些问题"><meta property="twitter:image" content="https://blog.guanglai.me/posts/%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%A1%EF%BC%8C%E8%BF%81%E7%A7%BB-astro.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"博客折腾小计，迁移 Astro | ~来都来了~","image":"https://blog.guanglai.me/posts/%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%A1%EF%BC%8C%E8%BF%81%E7%A7%BB-astro.png","datePublished":"2025-02-07T17:04:19.000Z","dateModified":"2025-02-07T17:04:28.000Z","author":[{"@type":"Person","name":"Guang Lai","url":"https://blog.guanglai.me/about"}]}</script><!-- Google Font --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet';" crossorigin><meta name="theme-color" content=""><meta name="google-site-verification" content="0geTufxIL_urRfGYXdanCSRXtO85KNnZTYDcIJ4M63Q"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script src="/toggle-theme.js" async></script><link rel="stylesheet" href="/_astro/about.c1_LFkLb.css">
+<style>a:where(.astro-blwjyjpt){position:relative;text-decoration-line:underline;text-decoration-style:dashed}a:where(.astro-blwjyjpt):hover{top:-.125rem;--tw-text-opacity: 1;color:rgba(var(--color-accent),var(--tw-text-opacity, 1))}a:where(.astro-blwjyjpt):focus-visible{padding:.25rem}a:where(.astro-blwjyjpt) svg:where(.astro-blwjyjpt){margin-right:-1.25rem;height:1.5rem;width:1.5rem;--tw-scale-x: .95;--tw-scale-y: .95;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));--tw-text-opacity: 1;color:rgba(var(--color-text-base),var(--tw-text-opacity, 1));opacity:.8}.group:where(.astro-blwjyjpt):hover a:where(.astro-blwjyjpt) svg:where(.astro-blwjyjpt){fill:rgb(var(--color-accent))}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+.social-icons:where(.astro-wkojbtzc){display:flex;flex-direction:column;flex-wrap:wrap;align-items:center;justify-content:center;gap:.25rem}@media (min-width: 640px){.social-icons:where(.astro-wkojbtzc){align-items:flex-start}}.link-button:where(.astro-wkojbtzc){--tw-scale-x: .9;--tw-scale-y: .9;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));padding:.5rem}.link-button:where(.astro-wkojbtzc):hover{--tw-rotate: 6deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.link-button:where(.astro-wkojbtzc){padding:.25rem}}main:where(.astro-vj4tpspi){margin-left:auto;margin-right:auto;width:100%;max-width:48rem;padding-left:1rem;padding-right:1rem;padding-bottom:3rem}.post-title:where(.astro-vj4tpspi){font-size:1.5rem;line-height:2rem;font-weight:600;--tw-text-opacity: 1;color:rgba(var(--color-accent),var(--tw-text-opacity, 1))}
+</style><script type="module" src="/_astro/hoisted.Ccr0FvUn.js"></script><style>[data-astro-transition-scope="astro-plk3gbjq-1"] { view-transition-name: \535A\5BA2\6298\817E\5C0F\8BA1\FF0C\8FC1\79FB-astro; }@layer astro { ::view-transition-old(\535A\5BA2\6298\817E\5C0F\8BA1\FF0C\8FC1\79FB-astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\535A\5BA2\6298\817E\5C0F\8BA1\FF0C\8FC1\79FB-astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\535A\5BA2\6298\817E\5C0F\8BA1\FF0C\8FC1\79FB-astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\535A\5BA2\6298\817E\5C0F\8BA1\FF0C\8FC1\79FB-astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-plk3gbjq-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-plk3gbjq-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: astro; }@layer astro { ::view-transition-old(astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(astro) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: hexo; }@layer astro { ::view-transition-old(hexo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(hexo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(hexo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(hexo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-4"] { view-transition-name: blog; }@layer astro { ::view-transition-old(blog) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(blog) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(blog) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(blog) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body>  <header class="astro-3ef6ksr2"> <a id="skip-to-content" href="#main-content" class="astro-3ef6ksr2">Skip to content</a> <div class="nav-container astro-3ef6ksr2"> <div class="top-nav-wrap astro-3ef6ksr2"> <a href="/" class="logo whitespace-nowrap astro-3ef6ksr2"> ~来都来了~ </a> <nav id="nav-menu" class="astro-3ef6ksr2"> <button class="hamburger-menu focus-outline astro-3ef6ksr2" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="menu-icon astro-3ef6ksr2"> <line x1="7" y1="12" x2="21" y2="12" class="line astro-3ef6ksr2"></line> <line x1="3" y1="6" x2="21" y2="6" class="line astro-3ef6ksr2"></line> <line x1="12" y1="18" x2="21" y2="18" class="line astro-3ef6ksr2"></line> <line x1="18" y1="6" x2="6" y2="18" class="close astro-3ef6ksr2"></line> <line x1="6" y1="6" x2="18" y2="18" class="close astro-3ef6ksr2"></line> </svg> </button> <ul id="menu-items" class="display-none sm:flex astro-3ef6ksr2"> <li class="astro-3ef6ksr2"> <a href="/posts/" class=" astro-3ef6ksr2">
+Posts
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/tags/" class=" astro-3ef6ksr2">
+Tags
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/about/" class=" astro-3ef6ksr2">
+About
+</a> </li> <li class="astro-3ef6ksr2"> <a href="/archives/" class="group inline-block hover:text-skin-accent focus-outline flex justify-center p-3 sm:p-1 astro-3ef6ksr2" aria-label="archives" title="Archives"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icons-tabler-outline !hidden sm:!inline-block astro-3ef6ksr2">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-3ef6ksr2"></path> <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" class="astro-3ef6ksr2"></path> <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" class="astro-3ef6ksr2"></path> <path d="M10 12l4 0" class="astro-3ef6ksr2"></path>  </svg> <span class="sm:sr-only astro-3ef6ksr2">
+Archives
+</span> </a> </li> <li class="astro-3ef6ksr2"> <a href="/search/" class="group inline-block hover:text-skin-accent focus-outline p-3 sm:p-1  flex astro-3ef6ksr2" aria-label="search" title="Search"> <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3ef6ksr2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3ef6ksr2"></path> </svg> <span class="sr-only astro-3ef6ksr2">Search</span> </a> </li> <li class="astro-3ef6ksr2"> <button id="theme-btn" class="focus-outline astro-3ef6ksr2" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg" class="astro-3ef6ksr2"> <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z" class="astro-3ef6ksr2"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg" class="astro-3ef6ksr2"> <path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z" class="astro-3ef6ksr2"></path> </svg> </button> </li> </ul> </nav> </div> </div> <div class="max-w-3xl mx-auto px-4"> <hr class="border-skin-line" aria-hidden="true"> </div> </header>   <div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-vj4tpspi"> <button class="focus-outline mb-2 mt-8 flex hover:opacity-75 astro-vj4tpspi" onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"> <svg xmlns="http://www.w3.org/2000/svg" class="astro-vj4tpspi"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg><span class="astro-vj4tpspi">Go back</span> </button> </div> <main id="main-content" class="astro-vj4tpspi"> <h1 class="post-title inline-block astro-vj4tpspi" data-astro-transition-scope="astro-plk3gbjq-1"> 博客折腾小计，迁移 Astro </h1> <div class="flex items-center space-x-2 opacity-80 my-2 astro-vj4tpspi"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="italic text-base">Updated:</span><span class="italic text-base"><time dateTime="2025-02-07T17:04:28.000Z">2025年2月7日</time><span aria-hidden="true"> | </span><a class="space-x-1.5 hover:opacity-75" href="https://github.com/knothhe/blog-astro/edit/main/src/content/blog/blog-migrate-to-astro.md" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icons-tabler-outline icon-tabler-edit inline-block !scale-90 fill-skin-base" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path><path d="M16 5l3 3"></path></svg><span class="text-base italic">Suggest Changes</span></a></span></div> <aside class="lg:block fixed left-[82%] top-32 order-2 -me-32 hidden basis-64"> <h2 class="font-semibold">Table of Contents</h2> <ul class="mt-4 text-sm"> <li class=""> <a aria-label="Scroll to section: 起因" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#起因"><span class="me-0.5"></span>起因</a>  </li><li class=""> <a aria-label="Scroll to section: Astro Paper" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#astro-paper"><span class="me-0.5"></span>Astro Paper</a>  </li><li class=""> <a aria-label="Scroll to section: 博客基础配置" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#博客基础配置"><span class="me-0.5"></span>博客基础配置</a>  </li><li class=""> <a aria-label="Scroll to section: 迁移" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#迁移"><span class="me-0.5"></span>迁移</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: 博客文章迁移" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#博客文章迁移"><span class="me-0.5"></span>博客文章迁移</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: LaTeX 数学公式支持" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#latex-数学公式支持"><span class="me-0.5"></span>LaTeX 数学公式支持</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: 历史博客文章路径兼容" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#历史博客文章路径兼容"><span class="me-0.5"></span>历史博客文章路径兼容</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: 第一种方案" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#第一种方案"><span class="me-0.5"></span>第一种方案</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: 第二种方案" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#第二种方案"><span class="me-0.5"></span>第二种方案</a>  </li> </ul> </li><li class="ms-2"> <a aria-label="Scroll to section: 文章目录" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#文章目录"><span class="me-0.5"></span>文章目录</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: sitemap、rotbots.txt 和 RSS" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#sitemaprotbotstxt-和-rss"><span class="me-0.5"></span>sitemap、rotbots.txt 和 RSS</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: GitHub Page 自定义域名" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#github-page-自定义域名"><span class="me-0.5"></span>GitHub Page 自定义域名</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: OG 图片" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#og-图片"><span class="me-0.5"></span>OG 图片</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: facicon 图标" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#facicon-图标"><span class="me-0.5"></span>facicon 图标</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: 部署到 GitHub Page" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#部署到-github-page"><span class="me-0.5"></span>部署到 GitHub Page</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: Google Site Verification" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-2 text-[0.80rem]" href="#google-site-verification"><span class="me-0.5"></span>Google Site Verification</a>  </li> </ul> </li><li class=""> <a aria-label="Scroll to section: 后记" class="block line-clamp-2 hover:text-accent text-nowrap max-w-[14rem] overflow-hidden overflow-ellipsis mt-3" href="#后记"><span class="me-0.5"></span>后记</a>  </li> </ul> </aside> <article id="article" class="prose mx-auto mt-8 max-w-3xl astro-vj4tpspi"> <h2 id="起因">起因</h2>
+<p>今天花了几乎一整天，把博客框架从 Hexo 迁移到了 Astro。我的博客最开始是在 2019 搭建的，哪个时候 Hexo 还是比较流行的静态博客生成框架，NexT 主题也是 Hexo 框架中比较流行的主题。在那一年，可以看到很多使用 NexT 主题的博客，如今看到的就似乎比较少了。经过六年的前端技术发展，Hexo 多少还是显得有点落后了，并不是基于当前流行的 React、Tailwind CSS、TypeScript 这样的主流前端框架，定制一些页面对我这个前端新手着实存在不小的困难。</p>
+<p>说起原来博客的页面，本身主题是基于 NexT。为了稍显一些个人博客的不同之处，当时硬编码 CSS，使用 Chrome Dev Console，参考 Twitter 的暗色主题，设计了一套暗色的 color scheme。但是如今再想让我去修改这些配置，完全就有心无力了。而且博客只有一种主题，虽然 NexT 支持配置亮色和暗色主题，但是并不支持动态切换，我又完全没有能力去修改博客框架，让其支持主题切换。</p>
+<p>恰巧又有很多博客主，都有迁移到 Astro 的博文。大致浏览了 Astro 的文档，基本满足我的需求。Astro 本身也是基于主流的前端技术，我也在这段时间里，粗糙地学了一遍前端的主流技术，这次就选择了 Astro 作为新的博客框架，还是希望能够使用长久一些，不再折腾博客框架，安安心心写博客文章。</p>
+<h2 id="astro-paper">Astro Paper</h2>
+<p>选定了 Astro 作为博客框架后，我选择的博客主题是 <a href="https://github.com/satnaing/astro-paper">AstroPaper</a>。吸引我的主要是主题样式和使用的技术栈。AstroPaper 主题足够简洁，基本没有影响阅读的元素。</p>
+<p>主要戳中我的是下面这些点：</p>
+<ul>
+<li>主要技术栈
+<ul>
+<li>Main Framework - Astro</li>
+<li>Type Checking - TypeScript</li>
+<li>Component Framework - ReactJS</li>
+<li>Styling - TailwindCSS</li>
+</ul>
+</li>
+<li>主要特性
+<ul>
+<li>SEO-friendly</li>
+<li>light &#x26; dark mode</li>
+<li>fuzzy search</li>
+<li>sitemap &#x26; rss feed</li>
+<li>highly customizable</li>
+</ul>
+</li>
+</ul>
+<p>我使用的是 pnpm 包管理器，也可以参考官网文档，使用其他包管理器，使用下面的命令就可以创建一个 AstroPaper 主题的博客：</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pnpm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> dlx</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> create-astro</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --template</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> satnaing/astro-paper</span></span>
+<span class="line"></span></code></pre>
+<h2 id="博客基础配置">博客基础配置</h2>
+<p>网站的相关配置，就直接配置在 <code>config.ts</code> 就可以了。参考原有 Hexo 配置，手动配置新的配置文件。</p>
+<p>如果不需要迁移博客，那么简单配置下，其实就已经可以使用，我则需要把历史的 Hexo 博客的重要配置迁移到 Astro Paper 上，以下是一些记录。</p>
+<h2 id="迁移">迁移</h2>
+<h3 id="博客文章迁移">博客文章迁移</h3>
+<p>Astro 的博客文章虽然和 Hexo 一样，都是 Markdown 语法，但是一些元数据方面的设置不太一样。</p>
+<ul>
+<li>date -> pubDatetime</li>
+<li>update -> modDatetime</li>
+<li><code>--- &#x3C;!-- more --></code> 之间的数据，转换成 description</li>
+<li>mathjax，categories 在 Astro 中属于无效标签，需要移除</li>
+</ul>
+<p>于是最开始的任务就是编写脚本，将历史数据转换内容到新的数据格式。最近也一直在尝试 AI 编程，Deepseek 的服务最近又一直不太稳定，没办法使用 vscode + deepseek api + cline 编程，就尝试了字节的 Trae，毕竟可以免费使用 <code>Claude-3.5-Sonnet</code>，效果非常 nice。脚本放在了<a href="https://github.com/knothhe/knot-scripts/blob/main/scripts/hexo-migrate-astro/convert_markdown-hexo-to-astro.py">这里</a>，以及<a href="https://github.com/knothhe/knot-scripts/tree/main/scripts/hexo-migrate-astro">使用说明</a>。</p>
+<h3 id="latex-数学公式支持">LaTeX 数学公式支持</h3>
+<p>基本参考官方文档操作， <a href="https://astro-paper.pages.dev/posts/how-to-add-latex-equations-in-blog-posts/">Adding LaTeX Equations in AstroPaper blog posts | AstroPaper</a></p>
+<ol>
+<li>Install the necessary remark and rehype plugins</li>
+</ol>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pnpm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> rehype-katex</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> remark-math</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> katex</span></span>
+<span class="line"></span></code></pre>
+<ol start="2">
+<li>编辑 <code>astro.config.ts</code></li>
+</ol>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// other imports</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> remarkMath </span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">remark-math</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> rehypeKatex </span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">rehype-katex</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">export</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> default</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> defineConfig</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">({</span></span>
+<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // other configs</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  markdown</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    remarkPlugins</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">      remarkMath</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">      remarkToc</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      [</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">        remarkCollapse</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        {</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">          test</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Table of contents</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      ]</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    ]</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    rehypePlugins</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="color:#24292EFF;--shiki-dark:#D7DBE0">rehypeKatex</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // other markdown configs</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  }</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // other configs</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">});</span></span>
+<span class="line"></span></code></pre>
+<ol start="3">
+<li>编辑 <code>src/layouts/Layout.astro</code></li>
+</ol>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span>---</span></span>
+<span class="line"><span>import { LOCALE, SITE } from "@config";</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// astro code</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;!doctype html></span></span>
+<span class="line"><span>&#x3C;!-- others... --></span></span>
+<span class="line"><span>&#x3C;script is:inline src="/toggle-theme.js">&#x3C;/script></span></span>
+<span class="line"><span>&#x3C;link</span></span>
+<span class="line"><span>  rel="stylesheet"</span></span>
+<span class="line"><span>  href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"</span></span>
+<span class="line"><span>/></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;body></span></span>
+<span class="line"><span>  &#x3C;slot /></span></span>
+<span class="line"><span>&#x3C;/body></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>不过行间公式在暗色模式下存在渲染错误，在 <a href="https://github.com/satnaing/astro-paper/issues/412">issue</a> 区看到其他人也存在同样的问题，但是没能解决。我现在使用数据公式比较少，就暂时搁置不处理了。</p>
+<h3 id="历史博客文章路径兼容">历史博客文章路径兼容</h3>
+<p>原本 hexo 的路径引用是 <code>blog.guanglai.me/post-name</code>，在 AstroPaper 主题中的文章路径是 <code>blog.guanglai.me/posts/post-name</code>，于是想到了下面两种解决方案。</p>
+<h4 id="第一种方案">第一种方案</h4>
+<p>修改 astro 的文章路径，保持一致</p>
+<ol>
+<li><code>posts</code> 下的文件放到上级目录 <code>pages</code> 下，删除 <code>index.astro</code>。</li>
+<li>修改其他页面的路径引用路由，/posts/${slug}/，删除 /posts
+<ol>
+<li><code>Posts.astro</code></li>
+<li><code>TagPosts.astro</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="第二种方案">第二种方案</h4>
+<p>使用 Astro 提供的重定向功能，将原来的博客地址，重定向到新的博客地址。这是 Astro 的路由文档 <a href="https://docs.astro.build/en/guides/routing/#redirects">Routing | Docs</a>，修改 <code>astro.config.ts</code> 就可以定义静态路由重定向。于是同样编写了脚本，将原有的 <code>/post-name</code> 全部重定向到 <code>/posts/post-name</code>，脚本放在<a href="https://github.com/knothhe/knot-scripts/blob/main/scripts/hexo-migrate-astro/generate_routes.py">这里</a>。</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// astro.config.ts</span></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { defineConfig } </span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">astro/config</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">export</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> default</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> defineConfig</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">({</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  redirects</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#D9F5DD">    '</span><span style="color:#22863A;--shiki-dark:#ECC48D">/old-page</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">/new-page</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#D9F5DD">    '</span><span style="color:#22863A;--shiki-dark:#ECC48D">/blog</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">https://example.com/blog</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  }</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">});</span></span>
+<span class="line"></span></code></pre>
+<h3 id="文章目录">文章目录</h3>
+<p>当时看到了这篇文章 <a href="https://4ark.me/posts/2024-03-20-hexo-to-astro/#%E6%95%B4%E4%BD%93%E6%84%9F%E5%8F%97">再见 Hexo，你好 Astro！ | 4Ark</a>，
+参考博主的配置，实现了大屏幕下的目录展示。具体修改直接参考博客的 <a href="https://github.com/gd4Ark/gd4Ark.github.io/commit/c233cc2aad413c2d4efb4dfb50b5fd8b507beeb9">commit</a> 即可。</p>
+<h3 id="sitemaprotbotstxt-和-rss">sitemap、rotbots.txt 和 RSS</h3>
+<p>AstroPaper 会自动生成需要的文件，但是使用 <code>pnpm dev</code> 开发阶段不会生成下面这些文件，<code>pnpm build</code> 构建最终产物才会生成。本地可以使用 <code>pnpm preview</code> 在构建好后预览。</p>
+<ul>
+<li>sitemap.xml (主题是分块 sitemap.xml，只有：sitemap-index.xml 和 sitemap-0.xml)</li>
+<li>rss.xml</li>
+<li>robots.txt</li>
+</ul>
+<h3 id="github-page-自定义域名">GitHub Page 自定义域名</h3>
+<p>CNAME 文件配置在 <code>public</code> 目录下，用于 GitHub 自定义域名。</p>
+<p>文件内容</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span>blog.guanglai.me</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="og-图片">OG 图片</h3>
+<p>AstroPaper 支持<a href="https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/#issue-non-latin-characters">生成 OG 图片</a>，但是原有的主题字体默认只支持 <code>Latin</code> 字符，对于非 <code>Latin</code> 字符的博客，需要自定义加载相关字体。</p>
+<p>我加载了以下字体，后续看是否需要减少一些：</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// file: loadGoogleFont.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">async</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> function</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> loadGoogleFonts</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">  text</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> string</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#6F42C1;--shiki-dark:#FFCB8B"> Promise</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">&#x3C;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#FFCB8B">  Array</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">&#x3C;{ name</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> string</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">; data</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#6F42C1;--shiki-dark:#FFCB8B"> ArrayBuffer</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">; weight</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> number</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">; style</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> string</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }></span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">> {</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">  const</span><span style="color:#1976D2;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> fontsConfig</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK JP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 日文字体</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+JP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Google Fonts 中的名称</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 400</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK JP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+JP:wght@700</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 加粗版本</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 700</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK SC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 简体中文字体</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+SC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Google Fonts 中的名称</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 400</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK SC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+SC:wght@700</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 加粗版本</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 700</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK TC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 繁体中文字体</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+TC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Google Fonts 中的名称</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 400</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK TC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+TC:wght@700</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 加粗版本</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 700</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  ];</span></span>
+<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // other codes</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="facicon-图标">facicon 图标</h3>
+<p>原有在 Hexo 上使用的图标格式是 <code>png</code> 和 <code>ico</code>，并且内容是动漫截图，其实也没有特别的含义，只是我曾经使用过的头像之一。于是这次就一起换了图标。</p>
+<ul>
+<li>使用 <a href="https://formito.com/tools/favicon">https://formito.com/tools/favicon</a> 生成</li>
+<li>font: ZCOOL QingKe HuangYou</li>
+<li>backgroud color: 2F3742</li>
+<li>放在 <code>public</code> 下，命名为 <code>favicon.svg</code> 即可</li>
+<li>删除了一些不需要的资源</li>
+</ul>
+<h3 id="部署到-github-page">部署到 GitHub Page</h3>
+<p>Astro 官方有<a href="https://docs.astro.build/en/guides/deploy/github/">部署到 GitHub Page 的指导</a>，提供了但是官方文件是源文件和网站在同一个 GitHub 仓库，我则是把源文件仓库设为私有，需要部署到目标仓库。经过了一翻调研，也就不使用官方部署指南提供的 GitHub Action 配置了。</p>
+<p>在 <code>.github/workflows</code> 下，新建文件 <code>deploy.yml</code>，文件内容如下：</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> GitHub Pages</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#1976D2;--shiki-dark:#FF5874">on</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">  push</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    branches</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#22863A;--shiki-dark:#ECC48D">main</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">  pull_request</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">jobs</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">  deploy</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    runs-on</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ubuntu-latest</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    permissions</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">      contents</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> write</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    concurrency</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">      group</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ${{ github.workflow }}-${{ github.ref }}</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    steps</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Checkout</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> actions/checkout@v4</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Install pnpm</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> pnpm/action-setup@v4</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        with</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          run_install</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#FF5874"> false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Install Node.js</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> actions/setup-node@v4</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        with</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          node-version</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 20</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          cache</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">pnpm</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Install dependencies</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        run</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> pnpm install</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Build</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        run</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> pnpm build</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Deploy</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> peaceiris/actions-gh-pages@v4</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        with</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          deploy_key</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ${{ secrets.TARGET_REPO_DEPLOY_KEY }}</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # targert repository deploy key secret</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          external_repository</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> knothhe/knothhe.github.io</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          publish_dir</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ./dist</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          publish_branch</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> master</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # default: gh-pages</span></span>
+<span class="line"></span></code></pre>
+<p>使用 <code>peaceiris/actions-gh-pages@v4</code> 的 deploy key 的方式推送的目标仓库，所以需要在目标仓库和源仓库配置 DEPLOY_KEY 的公钥和私钥。</p>
+<p>步骤参考：</p>
+<ol>
+<li>本地生成 ssh 公钥和私钥，不带 passphare。</li>
+</ol>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ssh-keygen</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> -C</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">github@action</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<span class="line"></span></code></pre>
+<ol start="2">
+<li>目标仓库配置公钥
+<ol>
+<li>依次点击 <code>Settings > Deploy keys > Add deplay key</code></li>
+<li><img src="https://images.oss.guanglai.me/2025/202502080217080.png" alt="配置设置"></li>
+<li>生成的公钥，即带有 <code>.pub</code> 后缀的文件的内容复制到文本框中</li>
+</ol>
+</li>
+<li>源仓库配置私钥
+<ol>
+<li>依次点击 <code>Settings > Secrets and variables > Actions > New repository secret</code></li>
+<li><img src="https://images.oss.guanglai.me/2025/202502080220179.png" alt="配置设置"></li>
+<li>生成的公钥，即不带有 <code>.pub</code> 后缀的文件的内容复制到文本框中</li>
+</ol>
+</li>
+</ol>
+<h3 id="google-site-verification">Google Site Verification</h3>
+<p>官方推荐是使用 <code>.env</code> 配置，但是 <code>.gitignore</code> 文件里，忽略了 <code>.env</code> 文件，所以考虑本地生成时，可以配置 <code>.env</code> 文件，使用 GitHub 时，将内容配置到 GitHub 仓库中。</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span># in your environment variable file (.env)</span></span>
+<span class="line"><span>PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>采用密钥配合 GitHub Action 方式配置</p>
+<ul>
+<li>GitHub 仓库配置，同样是在源仓库的<code>Settings > Secrets and variables > Actions > New repository secret</code> 下配置，名称为 <code>GOOGLE_SITE_VERIFICATION_SECRET</code>，值配置为 Google Search Console 给的值。</li>
+<li>GitHub Action 中在 <code>checkout</code> 之后添加下面的配置：</li>
+</ul>
+<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Create .env file</span></span>
+<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        run</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> |</span></span>
+<span class="line"><span style="color:#2B5581;--shiki-dark:#ECC48D">          echo "PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.GOOGLE_SITE_VERIFICATION_SECRET }}" >> .env</span></span>
+<span class="line"></span></code></pre>
+<h2 id="后记">后记</h2>
+<p>本次折腾基本就是做了上面这些步骤，花费了几乎一天的时间。剩下还有评论没能迁移，后续再做考虑。</p> </article> <ul class="my-8 astro-vj4tpspi"> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/astro/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-2"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+&nbsp;<span class="astro-blwjyjpt">astro</span> </a> </li> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/hexo/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-3"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+&nbsp;<span class="astro-blwjyjpt">hexo</span> </a> </li> <li class="inline-block my-1 underline-offset-4 astro-blwjyjpt"> <a href="/tags/blog/" class="text-sm pr-2 group astro-blwjyjpt" data-astro-transition-scope="astro-36ssibgs-4"> <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-blwjyjpt"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-blwjyjpt"></path> </svg>
+&nbsp;<span class="astro-blwjyjpt">blog</span> </a> </li>  </ul> <div class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4 astro-vj4tpspi"> <button id="back-to-top" class="focus-outline whitespace-nowrap py-1 hover:opacity-75 astro-vj4tpspi"> <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90 astro-vj4tpspi"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-vj4tpspi"></path> </svg> <span class="astro-vj4tpspi">Back to Top</span> </button> <div class="social-icons astro-wkojbtzc"> <span class="italic astro-wkojbtzc">Share this post on:</span> <div class="text-center astro-wkojbtzc"> <a href="https://x.com/intent/post?url=https://blog.guanglai.me/posts/blog-migrate-to-astro/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post on X"> <svg  
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg> <span class="sr-only astro-wkojbtzc">Share this post on X</span> </a><a href="https://t.me/share/url?url=https://blog.guanglai.me/posts/blog-migrate-to-astro/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post via Telegram"> <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon-tabler"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+      </svg> <span class="sr-only astro-wkojbtzc">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://blog.guanglai.me/posts/blog-migrate-to-astro/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post on Pinterest"> <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="8" y1="20" x2="12" y2="11"></line>
+      <path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+    </svg> <span class="sr-only astro-wkojbtzc">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://blog.guanglai.me/posts/blog-migrate-to-astro/" class="group inline-block hover:text-skin-accent link-button astro-wkojbtzc" title="Share this post via email"> <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <polyline points="3 7 12 13 21 7"></polyline>
+    </svg> <span class="sr-only astro-wkojbtzc">Share this post via email</span> </a> </div> </div>  </div> <hr class="my-6 border-dashed astro-vj4tpspi"> <!-- Previous/Next Post Buttons --> <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 astro-vj4tpspi">  <a href="/posts/what-is-guanglai-doing-this-week-009" class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2 astro-vj4tpspi"> <div class="astro-vj4tpspi"> <span class="astro-vj4tpspi">Next Post</span> <div class="text-sm text-skin-accent/85 astro-vj4tpspi">广来这周在做什么 009</div> </div> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none astro-vj4tpspi">  <path stroke="none" d="M0 0h24v24H0z" fill="none" class="astro-vj4tpspi"></path> <path d="M9 6l6 6l-6 6" class="astro-vj4tpspi"></path>  </svg> </a> </div> </main> <footer class="mt-auto astro-sz7xmlte"> <div class="max-w-3xl mx-auto px-0"> <hr class="border-skin-line" aria-hidden="true"> </div> <div class="footer-wrapper astro-sz7xmlte"> <div class="social-icons flex astro-upu6fzxr"> <a href="https://github.com/knothhe" class="group inline-block hover:text-skin-accent link-button astro-upu6fzxr" title=" ~来都来了~ on Github"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+    ></path>
+  </svg> <span class="sr-only astro-upu6fzxr"> ~来都来了~ on Github</span> </a> </div>  <div class="copyright-wrapper astro-sz7xmlte"> <span class="astro-sz7xmlte">Copyright &#169; 2025</span> <span class="separator astro-sz7xmlte">&nbsp;|&nbsp;</span> <span class="astro-sz7xmlte">All rights reserved.</span> </div> </div> </footer>   </body></html>  <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+      copyButton.className =
+        "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    document.querySelector("#back-to-top")?.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  }
+  backToTop();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
