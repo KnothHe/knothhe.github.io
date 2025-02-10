@@ -104,8 +104,8 @@ Archives
 <li>
 <p>配置 Git</p>
 <p>在使用 Git 之前，需要先配置 Git 的用户名和用户邮箱</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">git</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> config</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --global</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> user.name</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">your name</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
-<span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">git</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> config</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --global</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> user.email</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> youremail@example.com</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">git</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> config</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --global</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> user.name</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "your name"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">git</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> config</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --global</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> user.email</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> youremail@example.com</span></span>
 <span class="line"></span></code></pre>
 </li>
 </ul>
@@ -113,19 +113,19 @@ Archives
 <li>
 <p>安装 Hexo</p>
 <p>使用 Npm 安装 Hexo。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">npm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> hexo-cli</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> -g</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> hexo-cli</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -g</span></span>
 <span class="line"></span></code></pre>
 </li>
 </ol>
 <h2 id="使用-hexo">使用 Hexo</h2>
 <p>使用下面的命令初始化目标文件夹，所有需要的文件都会被下载到该文件夹下。
 这个过程需要一段时间。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">hexo</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> init</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> &#x3C;</span><span style="color:#2B5581;--shiki-dark:#ECC48D">folde</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">r</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">></span></span>
-<span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">cd</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA"> &#x3C;</span><span style="color:#2B5581;--shiki-dark:#ECC48D">folde</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">r</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">></span></span>
-<span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">npm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> install</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">hexo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> init</span><span style="color:#D73A49;--shiki-dark:#F97583"> &#x3C;</span><span style="color:#032F62;--shiki-dark:#9ECBFF">folde</span><span style="color:#24292E;--shiki-dark:#E1E4E8">r</span><span style="color:#D73A49;--shiki-dark:#F97583">></span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">cd</span><span style="color:#D73A49;--shiki-dark:#F97583"> &#x3C;</span><span style="color:#032F62;--shiki-dark:#9ECBFF">folde</span><span style="color:#24292E;--shiki-dark:#E1E4E8">r</span><span style="color:#D73A49;--shiki-dark:#F97583">></span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span></span>
 <span class="line"></span></code></pre>
 <p>初始化之后就可使用如下命令预览，默认已经有一篇 Hello World 文档用于预览效果的展示。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">hexo</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> s</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">hexo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> s</span></span>
 <span class="line"></span></code></pre>
 <p>可以看到命令行有提示，Hexo 运行在地址 <a href="http://localhost:4000">http://localhost:4000</a>，通过浏览器打开该网址即可看到预览结果。</p>
 <h2 id="博客编写">博客编写</h2>
@@ -147,21 +147,21 @@ Archives
 <ul>
 <li>可以看到该文件默认有 deploy 小节，由于是发布到 GitHub，那么按下面配置编写即可:</li>
 </ul>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">deploy</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    type</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> git</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    repo</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        github</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> git@github.com:yourGitHubUsername/theBlogRepository.git</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    branch</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> master</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">deploy</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    type</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">git</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    repo</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        github</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">git@github.com:yourGitHubUsername/theBlogRepository.git</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    branch</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">master</span></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
 <p>安装 Hexo 使用 Git 发布的插件</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">npm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> hexo-deployer-git</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --save</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> hexo-deployer-git</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --save</span></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
 <p>使用下面的命令发布到你的 GitHub 仓库</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">hexo</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> d</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> g</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">hexo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> d</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> g</span></span>
 <span class="line"></span></code></pre>
 </li>
 </ol>

@@ -181,7 +181,7 @@ Archives
 </li>
 </ul>
 <p>我使用的是 pnpm 包管理器，也可以参考官网文档，使用其他包管理器，使用下面的命令就可以创建一个 AstroPaper 主题的博客：</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pnpm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> dlx</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> create-astro</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> --template</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> satnaing/astro-paper</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">pnpm</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> dlx</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> create-astro</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --template</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> satnaing/astro-paper</span></span>
 <span class="line"></span></code></pre>
 <p><strong>更新：</strong></p>
 <p>过了一段时间之后，我发现上面这条命令也是 clone 的主题的官方仓库，考虑到后续同步上游的更新，<a href="https://blog.guanglai.me/posts/what-is-guanglai-doing-this-week-010/">我做了修改</a>。
@@ -204,55 +204,55 @@ Archives
 <ol>
 <li>Install the necessary remark and rehype plugins</li>
 </ol>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">pnpm</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> rehype-katex</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> remark-math</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> katex</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">pnpm</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> rehype-katex</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> remark-math</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> katex</span></span>
 <span class="line"></span></code></pre>
 <ol start="2">
 <li>编辑 <code>astro.config.ts</code></li>
 </ol>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// other imports</span></span>
-<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> remarkMath </span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">remark-math</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
-<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> rehypeKatex </span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">rehype-katex</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// other imports</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> remarkMath </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "remark-math"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> rehypeKatex </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "rehype-katex"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">export</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> default</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> defineConfig</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">({</span></span>
-<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // other configs</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  markdown</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    remarkPlugins</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">      remarkMath</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">      remarkToc</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      [</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">        remarkCollapse</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        {</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">          test</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Table of contents</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">        }</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      ]</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    ]</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    rehypePlugins</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="color:#24292EFF;--shiki-dark:#D7DBE0">rehypeKatex</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">]</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">    // other markdown configs</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  }</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // other configs</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">});</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">export</span><span style="color:#D73A49;--shiki-dark:#F97583"> default</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> defineConfig</span><span style="color:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // other configs</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  markdown: {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    remarkPlugins: [</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      remarkMath,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      remarkToc,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      [</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        remarkCollapse,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">          test: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Table of contents"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      ],</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    rehypePlugins: [rehypeKatex],</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">    // other markdown configs</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // other configs</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">});</span></span>
 <span class="line"></span></code></pre>
 <ol start="3">
 <li>编辑 <code>src/layouts/Layout.astro</code></li>
 </ol>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span>---</span></span>
-<span class="line"><span>import { LOCALE, SITE } from "@config";</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// astro code</span></span>
-<span class="line"><span>---</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>&#x3C;!doctype html></span></span>
-<span class="line"><span>&#x3C;!-- others... --></span></span>
-<span class="line"><span>&#x3C;script is:inline src="/toggle-theme.js">&#x3C;/script></span></span>
-<span class="line"><span>&#x3C;link</span></span>
-<span class="line"><span>  rel="stylesheet"</span></span>
-<span class="line"><span>  href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"</span></span>
-<span class="line"><span>/></span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>&#x3C;body></span></span>
-<span class="line"><span>  &#x3C;slot /></span></span>
-<span class="line"><span>&#x3C;/body></span></span>
-<span class="line"><span></span></span></code></pre>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="astro"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">---</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { LOCALE, SITE } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "@config"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// astro code</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;!</span><span style="color:#22863A;--shiki-dark:#85E89D">doctype</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> html</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">&#x3C;!-- others... --></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">script</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> is:inline</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> src</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"/toggle-theme.js"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">script</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">link</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  rel</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"stylesheet"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  href</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">/></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">body</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">slot</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">body</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span></code></pre>
 <p>不过行间公式在暗色模式下存在渲染错误，在 <a href="https://github.com/satnaing/astro-paper/issues/412">issue</a> 区看到其他人也存在同样的问题，但是没能解决。我现在使用数据公式比较少，就暂时搁置不处理了。</p>
 <h3 id="历史博客文章路径兼容">历史博客文章路径兼容</h3>
 <p>原本 hexo 的路径引用是 <code>blog.guanglai.me/post-name</code>，在 AstroPaper 主题中的文章路径是 <code>blog.guanglai.me/posts/post-name</code>，于是想到了下面两种解决方案。</p>
@@ -269,15 +269,15 @@ Archives
 </ol>
 <h4 id="第二种方案">第二种方案</h4>
 <p>使用 Astro 提供的重定向功能，将原来的博客地址，重定向到新的博客地址。这是 Astro 的路由文档 <a href="https://docs.astro.build/en/guides/routing/#redirects">Routing | Docs</a>，修改 <code>astro.config.ts</code> 就可以定义静态路由重定向。于是同样编写了脚本，将原有的 <code>/post-name</code> 全部重定向到 <code>/posts/post-name</code>，脚本放在<a href="https://github.com/knothhe/knot-scripts/blob/main/scripts/hexo-migrate-astro/generate_routes.py">这里</a>。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// astro.config.ts</span></span>
-<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">import</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> { defineConfig } </span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">from</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">astro/config</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">;</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// astro.config.ts</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { defineConfig } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'astro/config'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">export</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> default</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> defineConfig</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">({</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  redirects</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> {</span></span>
-<span class="line"><span style="color:#22863A;--shiki-dark:#D9F5DD">    '</span><span style="color:#22863A;--shiki-dark:#ECC48D">/old-page</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">/new-page</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#212121;--shiki-dark:#D6DEEB">,</span></span>
-<span class="line"><span style="color:#22863A;--shiki-dark:#D9F5DD">    '</span><span style="color:#22863A;--shiki-dark:#ECC48D">/blog</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">https://example.com/blog</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  }</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">});</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">export</span><span style="color:#D73A49;--shiki-dark:#F97583"> default</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> defineConfig</span><span style="color:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  redirects: {</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    '/old-page'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'/new-page'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    '/blog'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/blog'</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">});</span></span>
 <span class="line"></span></code></pre>
 <h3 id="文章目录">文章目录</h3>
 <p>当时看到了这篇文章 <a href="https://4ark.me/posts/2024-03-20-hexo-to-astro/#%E6%95%B4%E4%BD%93%E6%84%9F%E5%8F%97">再见 Hexo，你好 Astro！ | 4Ark</a>，
@@ -292,58 +292,58 @@ Archives
 <h3 id="github-page-自定义域名">GitHub Page 自定义域名</h3>
 <p>CNAME 文件配置在 <code>public</code> 目录下，用于 GitHub 自定义域名。</p>
 <p>文件内容</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span>blog.guanglai.me</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span>blog.guanglai.me</span></span>
 <span class="line"><span></span></span></code></pre>
 <h3 id="og-图片">OG 图片</h3>
 <p>AstroPaper 支持<a href="https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/#issue-non-latin-characters">生成 OG 图片</a>，但是原有的主题字体默认只支持 <code>Latin</code> 字符，对于非 <code>Latin</code> 字符的博客，需要自定义加载相关字体。</p>
 <p>我加载了以下字体，后续看是否需要减少一些：</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">// file: loadGoogleFont.ts</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// file: loadGoogleFont.ts</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic">async</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> function</span><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> loadGoogleFonts</span><span style="color:#24292EFF;--shiki-dark:#D9F5DD">(</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D7DBE0">  text</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> string</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D9F5DD">)</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#6F42C1;--shiki-dark:#FFCB8B"> Promise</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">&#x3C;</span></span>
-<span class="line"><span style="color:#6F42C1;--shiki-dark:#FFCB8B">  Array</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">&#x3C;{ name</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> string</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">; data</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#6F42C1;--shiki-dark:#FFCB8B"> ArrayBuffer</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">; weight</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> number</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">; style</span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">:</span><span style="color:#1976D2;--shiki-dark:#C5E478"> string</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> }></span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">> {</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#C792EA">  const</span><span style="color:#1976D2;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic"> fontsConfig</span><span style="color:#D32F2F;--shiki-dark:#C792EA"> =</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB"> [</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK JP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 日文字体</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+JP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Google Fonts 中的名称</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 400</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK JP</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+JP:wght@700</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 加粗版本</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 700</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK SC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 简体中文字体</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+SC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Google Fonts 中的名称</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 400</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK SC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+SC:wght@700</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 加粗版本</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 700</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK TC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 繁体中文字体</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+TC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // Google Fonts 中的名称</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 400</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    {</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto Sans CJK TC</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      font</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">Noto+Sans+TC:wght@700</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> // 加粗版本</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      weight</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 700</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;font-style:inherit;--shiki-dark:#D6DEEB;--shiki-dark-font-style:italic">      style</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">normal</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    }</span><span style="color:#212121;--shiki-dark:#5F7E97">,</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">  ];</span></span>
-<span class="line"><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  // other codes</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">async</span><span style="color:#D73A49;--shiki-dark:#F97583"> function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> loadGoogleFonts</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  text</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Promise</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  Array</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;{ </span><span style="color:#E36209;--shiki-dark:#FFAB70">name</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; </span><span style="color:#E36209;--shiki-dark:#FFAB70">data</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> ArrayBuffer</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; </span><span style="color:#E36209;--shiki-dark:#FFAB70">weight</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; </span><span style="color:#E36209;--shiki-dark:#FFAB70">style</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">> {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  const</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> fontsConfig</span><span style="color:#D73A49;--shiki-dark:#F97583"> =</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto Sans CJK JP"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 日文字体</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      font: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto+Sans+JP"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// Google Fonts 中的名称</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      weight: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">400</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      style: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"normal"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto Sans CJK JP"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      font: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto+Sans+JP:wght@700"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 加粗版本</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      weight: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">700</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      style: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"normal"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto Sans CJK SC"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 简体中文字体</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      font: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto+Sans+SC"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// Google Fonts 中的名称</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      weight: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">400</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      style: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"normal"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto Sans CJK SC"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      font: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto+Sans+SC:wght@700"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 加粗版本</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      weight: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">700</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      style: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"normal"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto Sans CJK TC"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 繁体中文字体</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      font: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto+Sans+TC"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// Google Fonts 中的名称</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      weight: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">400</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      style: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"normal"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto Sans CJK TC"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      font: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Noto+Sans+TC:wght@700"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 加粗版本</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      weight: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">700</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      style: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"normal"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  ];</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // other codes</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <h3 id="facicon-图标">facicon 图标</h3>
 <p>原有在 Hexo 上使用的图标格式是 <code>png</code> 和 <code>ico</code>，并且内容是动漫截图，其实也没有特别的含义，只是我曾经使用过的头像之一。于是这次就一起换了图标。</p>
@@ -357,56 +357,56 @@ Archives
 <h3 id="部署到-github-page">部署到 GitHub Page</h3>
 <p>Astro 官方有<a href="https://docs.astro.build/en/guides/deploy/github/">部署到 GitHub Page 的指导</a>，提供了但是官方文件是源文件和网站在同一个 GitHub 仓库，我则是把源文件仓库设为私有，需要部署到目标仓库。经过了一翻调研，也就不使用官方部署指南提供的 GitHub Action 配置了。</p>
 <p>在 <code>.github/workflows</code> 下，新建文件 <code>deploy.yml</code>，文件内容如下：</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> GitHub Pages</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">GitHub Pages</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#1976D2;--shiki-dark:#FF5874">on</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">  push</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    branches</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#22863A;--shiki-dark:#ECC48D">main</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">  pull_request</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">on</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  push</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    branches</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">main</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  pull_request</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">jobs</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">  deploy</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    runs-on</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ubuntu-latest</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    permissions</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">      contents</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> write</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    concurrency</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">      group</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ${{ github.workflow }}-${{ github.ref }}</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">    steps</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Checkout</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> actions/checkout@v4</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">jobs</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  deploy</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    runs-on</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">ubuntu-latest</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    permissions</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      contents</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">write</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    concurrency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      group</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">${{ github.workflow }}-${{ github.ref }}</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    steps</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Checkout</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        uses</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">actions/checkout@v4</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Install pnpm</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> pnpm/action-setup@v4</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        with</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          run_install</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#FF5874"> false</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Install pnpm</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        uses</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">pnpm/action-setup@v4</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        with</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          run_install</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">false</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Install Node.js</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> actions/setup-node@v4</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        with</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          node-version</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#1976D2;--shiki-dark:#F78C6C"> 20</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          cache</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> '</span><span style="color:#22863A;--shiki-dark:#ECC48D">pnpm</span><span style="color:#22863A;--shiki-dark:#D9F5DD">'</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Install Node.js</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        uses</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">actions/setup-node@v4</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        with</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          node-version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">20</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          cache</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'pnpm'</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Install dependencies</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        run</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> pnpm install</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Install dependencies</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        run</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">pnpm install</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Build</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        run</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> pnpm build</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Build</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        run</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">pnpm build</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Deploy</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        uses</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> peaceiris/actions-gh-pages@v4</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        with</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          deploy_key</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ${{ secrets.TARGET_REPO_DEPLOY_KEY }}</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic"> # targert repository deploy key secret</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          external_repository</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> knothhe/knothhe.github.io</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          publish_dir</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> ./dist</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">          publish_branch</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> master</span><span style="color:#C2C3C5;font-style:inherit;--shiki-dark:#637777;--shiki-dark-font-style:italic">  # default: gh-pages</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Deploy</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        uses</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">peaceiris/actions-gh-pages@v4</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        with</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          deploy_key</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">${{ secrets.TARGET_REPO_DEPLOY_KEY }}</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # targert repository deploy key secret</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          external_repository</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">knothhe/knothhe.github.io</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          publish_dir</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">./dist</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">          publish_branch</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">master</span><span style="color:#6A737D;--shiki-dark:#6A737D">  # default: gh-pages</span></span>
 <span class="line"></span></code></pre>
 <p>使用 <code>peaceiris/actions-gh-pages@v4</code> 的 deploy key 的方式推送的目标仓库，所以需要在目标仓库和源仓库配置 DEPLOY_KEY 的公钥和私钥。</p>
 <p>步骤参考：</p>
 <ol>
 <li>本地生成 ssh 公钥和私钥，不带 passphare。</li>
 </ol>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ssh-keygen</span><span style="color:#2B5581;--shiki-dark:#82AAFF"> -C</span><span style="color:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="color:#22863A;--shiki-dark:#ECC48D">github@action</span><span style="color:#22863A;--shiki-dark:#D9F5DD">"</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">ssh-keygen</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -C</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "github@action"</span></span>
 <span class="line"></span></code></pre>
 <ol start="2">
 <li>目标仓库配置公钥
@@ -426,7 +426,7 @@ Archives
 </ol>
 <h3 id="google-site-verification">Google Site Verification</h3>
 <p>官方推荐是使用 <code>.env</code> 配置，但是 <code>.gitignore</code> 文件里，忽略了 <code>.env</code> 文件，所以考虑本地生成时，可以配置 <code>.env</code> 文件，使用 GitHub 时，将内容配置到 GitHub 仓库中。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span># in your environment variable file (.env)</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="txt"><code><span class="line"><span># in your environment variable file (.env)</span></span>
 <span class="line"><span>PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value</span></span>
 <span class="line"><span></span></span></code></pre>
 <p>采用密钥配合 GitHub Action 方式配置</p>
@@ -434,9 +434,9 @@ Archives
 <li>GitHub 仓库配置，同样是在源仓库的<code>Settings > Secrets and variables > Actions > New repository secret</code> 下配置，名称为 <code>GOOGLE_SITE_VERIFICATION_SECRET</code>，值配置为 Google Search Console 给的值。</li>
 <li>GitHub Action 中在 <code>checkout</code> 之后添加下面的配置：</li>
 </ul>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">      - </span><span style="color:#D32F2F;--shiki-dark:#7FDBCA">name</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#22863A;--shiki-dark:#ECC48D"> Create .env file</span></span>
-<span class="line"><span style="color:#D32F2F;--shiki-dark:#7FDBCA">        run</span><span style="color:#D32F2F;--shiki-dark:#D6DEEB">:</span><span style="color:#D32F2F;font-style:inherit;--shiki-dark:#C792EA;--shiki-dark-font-style:italic"> |</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#ECC48D">          echo "PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.GOOGLE_SITE_VERIFICATION_SECRET }}" >> .env</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">Create .env file</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">        run</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#D73A49;--shiki-dark:#F97583">|</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">          echo "PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.GOOGLE_SITE_VERIFICATION_SECRET }}" >> .env</span></span>
 <span class="line"></span></code></pre>
 <h3 id="评论">评论</h3>
 <p>采用 <a href="https://giscus.app/zh-CN">giscus</a>，参考 <a href="https://astro-paper.pages.dev/posts/how-to-integrate-giscus-comments/">AstroPaper 官方集成 Giscus 的文章</a>。</p>

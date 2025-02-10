@@ -95,7 +95,7 @@ Archives
 <p>获取源码。可以直接从 <a href="https://github.com/aseprite/aseprite/releases">Releases · aseprite/aseprite</a> 页面下载当前稳定版本的源码。</p>
 <p>skia 依赖库。同样可以从 <a href="https://github.com/aseprite/skia/releases">Releases · aseprite/skia</a> 页面下载预编译的 skia 文件。把编译好的 skia 放在 <code>$HOME/deps/skia</code> 目录下，编译过程时需要指定 skia 依赖的路径。</p>
 <p>构建工具。可以使用 Homebrew 安装。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">brew</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> install</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> cmake</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> ninja</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">brew</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> cmake</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ninja</span></span>
 <span class="line"></span></code></pre>
 <p>macOS 系统依赖</p>
 <blockquote>
@@ -104,26 +104,26 @@ Archives
 <p>下载 Xcode 即可。</p>
 <h2 id="编译">编译</h2>
 <p>先在项目根目录创建构建目录。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">mkdir</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> build</span></span>
-<span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#C5E478;--shiki-dark-font-style:italic">cd</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> build</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mkdir</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> build</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">cd</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> build</span></span>
 <span class="line"></span></code></pre>
 <p>Apple Silicon 用户可以用下面的命令构建编译参数。其他平台或架构可以按照官方文档修改。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">cmake</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DCMAKE_BUILD_TYPE=RelWithDebInfo</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DCMAKE_OSX_ARCHITECTURES=arm64</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DLAF_BACKEND=skia</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DSKIA_DIR=</span><span style="color:#2B5581;--shiki-dark:#C5E478">$HOME</span><span style="color:#2B5581;--shiki-dark:#82AAFF">/deps/skia</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DSKIA_LIBRARY_DIR=</span><span style="color:#2B5581;--shiki-dark:#C5E478">$HOME</span><span style="color:#2B5581;--shiki-dark:#82AAFF">/deps/skia/out/Release-arm64</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DSKIA_LIBRARY=</span><span style="color:#2B5581;--shiki-dark:#C5E478">$HOME</span><span style="color:#2B5581;--shiki-dark:#82AAFF">/deps/skia/out/Release-arm64/libskia.a</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -DPNG_ARM_NEON:STRING=on</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#82AAFF">  -G</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> Ninja</span><span style="color:#24292EFF;--shiki-dark:#F78C6C"> \</span></span>
-<span class="line"><span style="color:#2B5581;--shiki-dark:#ECC48D">  ..</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">cmake</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DCMAKE_BUILD_TYPE=RelWithDebInfo</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DCMAKE_OSX_ARCHITECTURES=arm64</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DLAF_BACKEND=skia</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DSKIA_DIR=</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$HOME</span><span style="color:#005CC5;--shiki-dark:#79B8FF">/deps/skia</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DSKIA_LIBRARY_DIR=</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$HOME</span><span style="color:#005CC5;--shiki-dark:#79B8FF">/deps/skia/out/Release-arm64</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DSKIA_LIBRARY=</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$HOME</span><span style="color:#005CC5;--shiki-dark:#79B8FF">/deps/skia/out/Release-arm64/libskia.a</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -DPNG_ARM_NEON:STRING=on</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  -G</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> Ninja</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  ..</span></span>
 <span class="line"></span></code></pre>
 <p>这里的 <code>-DSKIA_DIR=$HOME/deps/skia</code> 就是刚才下载的 skia 依赖库的路径。</p>
 <p>使用下面的命令编译即可。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;font-style:inherit;--shiki-dark:#82AAFF;--shiki-dark-font-style:italic">ninja</span><span style="color:#2B5581;--shiki-dark:#ECC48D"> aseprite</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">ninja</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> aseprite</span></span>
 <span class="line"></span></code></pre>
 <p>编译好的二进制文件就在 <code>/build/bin</code> 目录下， 即 <code>aseprite</code>。到这边位置就算是编译完成了。</p>
 <h2 id="美化">美化</h2>

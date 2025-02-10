@@ -92,7 +92,7 @@ Archives
 <li>通过 <code>xelatex "\def\themarco{1} "\input{filename.tex}"</code> 在编译时定义宏。</li>
 </ol>
 <h2 id="引入-ifthen-宏包">引入 <code>ifthen</code> 宏包</h2>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">\usepackage</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{ifthen}</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">\usepackage</span><span style="color:#24292E;--shiki-dark:#E1E4E8">{ifthen}</span></span>
 <span class="line"></span></code></pre>
 <h2 id="使用-ifthenelse">使用 <code>\ifthenelse{}{}{}</code></h2>
 <p>根据文档，　<code>\ifthenelse{〈test〉}{〈then clause〉}{〈else clause〉</code>　的定义如下：</p>
@@ -100,21 +100,21 @@ Archives
 <p><code>&#x3C;test></code> boolean 表达式可以以 <code>\and</code>、<code>\or</code>、<code>\not</code> 连接，此处我只需要测试一个宏是否定义，则不需要。</p>
 <p>文档中还写到，可以使用 <code>\isundefined{}</code> 来测试一个具体的宏是否未定义。虽然我更想找到一个宏可以判断一个变量是否被定义，但是，好吧，这个宏也能完成我需要的功能。</p>
 <p>所以，完成的语句如下：</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#C5E478">\ifthenelse</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span><span style="color:#6F42C1;--shiki-dark:#C5E478">\isundefined</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{</span><span style="color:#6F42C1;--shiki-dark:#C5E478">\themacro</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}}{</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    &#x3C;then clause></span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}{</span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">    &#x3C;else clause></span></span>
-<span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">}</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">\ifthenelse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\isundefined</span><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\themacro</span><span style="color:#24292E;--shiki-dark:#E1E4E8">}}{</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;then clause></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}{</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;else clause></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
 <p>如果　<code>\themacro</code> 未定以，则执行（包括） <code>&#x3C;then clause></code>，否则执行 <code>&#x3C;else clause></code>。</p>
 <p>至此，在 <code>tex</code> 文档中需要做的工作已经完成。接下来我们需要知道的是如何使用命令行编译时定义某个具体的宏。幸好，这个问题也很好解决。</p>
 <h2 id="在使用编译命令时定义具体的宏">在使用编译命令时定义具体的宏</h2>
 <p>以 <code>xelatex</code> 为例，我们可以直接输入以下命令编译指定文件。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">xelatex filename.tex</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">xelatex filename.tex</span></span>
 <span class="line"></span></code></pre>
 <p>同时如果输入参数不是文件名，而是字符串的话，同样可以编译。即 <code>xelatex "string"</code> 同样可以通过编译并生成文件，默认的文件名是 <code>texput.pdf</code>。目前，我仍然不知道 <code>xelatex</code> 如何指定输出文件名。</p>
 <p>于是，我们可以通过以下命令定义我们需要的宏。</p>
-<pre class="astro-code astro-code-themes min-light night-owl" style="background-color:#ffffff;--shiki-dark-bg:#011627;color:#24292eff;--shiki-dark:#d6deeb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#24292EFF;--shiki-dark:#D6DEEB">xelatex "</span><span style="color:#6F42C1;--shiki-dark:#C5E478">\def\thenmarco</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{1} </span><span style="color:#6F42C1;--shiki-dark:#C5E478">\input</span><span style="color:#24292EFF;--shiki-dark:#D6DEEB">{filename.tex}"</span></span>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tex"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">xelatex "</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\def\thenmarco</span><span style="color:#24292E;--shiki-dark:#E1E4E8">{1} </span><span style="color:#005CC5;--shiki-dark:#79B8FF">\input</span><span style="color:#24292E;--shiki-dark:#E1E4E8">{filename.tex}"</span></span>
 <span class="line"></span></code></pre>
 <p>至此，我所需要的条件编译的功能得到满足。</p>
 <h2 id="参考文献">参考文献</h2>
